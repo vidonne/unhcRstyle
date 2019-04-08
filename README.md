@@ -49,6 +49,11 @@ Below are some existing R Markdown output formats and examples.
 
 [![A letter in HTML](https://user-images.githubusercontent.com/163582/47872372-61e8f200-dddc-11e8-839b-d8e8ef8f51eb.png)](https://pagedown.rbind.io/html-letter)
 
+## UNHCR Report (`pagedown::unhcr_paged`)
+
+[![Statistical Report in HTML](https://user-images.githubusercontent.com/163582/47872372-61e8f200-dddc-11e8-839b-d8e8ef8f51eb.png)](https://pagedown.rbind.io/html-letter)
+
+
 ## Other examples
 
 - "Template of Exec Summaries with pagedown" by Joshua David Barillas: https://github.com/jdbarillas/executive_summary

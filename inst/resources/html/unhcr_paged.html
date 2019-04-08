@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$if(lang)$$lang$$else$en-US$endif$" xml:lang="$if(lang)$$lang$$else$en-US$endif$">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta property="dc:format" content="text/html">
+<meta name="generator" content="pandoc">
+<meta name="viewport" content="width=device-width">
+<meta property="dc:type" content="Text">
+<meta property="dc:language" content="$if(lang)$$lang$$else$en$endif$">
+<meta property="dc:title og:title" content="$pagetitle$">
+
+$if(url)$
+  <meta property="dc:identifier og:url" content="$url$">
+$endif$
+
+$if(abstract)$
+  <meta name="description" property="dc:description og:description schema:description" content="$abstract$">
+$endif$
+
+$if(date)$
+  <meta name="date" content="$date$">
+$endif$
+
+$for(author-meta)$
+  <meta name="author" content="$author-meta$" />
+  $if(url)$<meta property="og:url" content="$url$" />$endif$
+$endfor$
+
+$if(cover-image)$
+  <meta property="og:image" content="$url$$cover-image$" />
+$endif$
+
+
+
+<title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+
+  <script>
+  window.PagedConfig = {
+    before: async () => {
+      // Expand the citations links
+      let citations = document.querySelectorAll('.citation');
+      for (let citation of citations) {
+        let anchor = citation.querySelector('a');
+        if (!anchor) continue;
+        let span = document.createElement('span');
+        span.innerHTML = anchor.innerHTML
+        anchor.insertAdjacentElement('afterend', span)
+        let href = anchor.getAttribute('href')
+        anchor.remove();
+
+        let newAnchor = document.createElement('a');
+        newAnchor.setAttribute('href', href);
+        citation.insertAdjacentElement('beforebegin', newAnchor);
+        newAnchor.appendChild(citation);
+      }
+
+      // For the table captions, we would want to write this CSS rule:
+      //     caption {caption-side: bottom-outside;}
+      // However, the bottom-outside value is not standard and not implemented in Chrome.
+      // So, we need to modify the DOM.
+      let tables = document.querySelectorAll('table');
+      for (let table of tables) {
+        let caption = table.querySelector('caption');
+        if (!caption) continue;
+        let tableContainer = document.createElement('div');
+        tableContainer.className = 'table-container';
+        table.insertAdjacentElement('beforebegin', tableContainer);
+        tableContainer.appendChild(table);
+        let bookdownIdentifier = caption.querySelector('span[id^="tab\\:"]');
+        if (!!bookdownIdentifier) {
+          let tableId = bookdownIdentifier.id;
+          bookdownIdentifier.removeAttribute('id');
+          table.id = tableId;
+        }
+        let newCaption = document.createElement('p');
+        newCaption.className = 'caption';
+        newCaption.innerHTML = caption.innerHTML;
+        caption.remove();
+        tableContainer.appendChild(newCaption);
+      }
+    }
+  }
+  </script>
+
+  $if(math)$
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+    <script>
+    (function() {
+      previousBefore = PagedConfig.before;
+
+      window.PagedConfig = {
+        before: async () => {
+          await previousBefore();
+          await new Promise((resolve, reject) => {
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            var src = "true";
+            if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+            if (location.protocol !== "file:" && /^https?:/.test(src))
+              src = src.replace(/^https?:/, '');
+            script.src = src;
+            window.MathJax = {
+              AuthorInit: () => {
+                MathJax.Hub.Register.StartupHook("Begin", () => {
+                  MathJax.Hub.Queue(resolve);
+                });
+              }
+            };
+            document.getElementsByTagName("head")[0].appendChild(script);
+          });
+        }
+      };
+    })();
+    </script>
+  $endif$
+
+  $for(header-includes)$
+    $header-includes$
+  $endfor$
+
+  $if(highlightjs)$
+    <link rel="stylesheet"
+          href="$highlightjs$/$if(highlightjs-theme)$$highlightjs-theme$$else$default$endif$.css"
+          $if(html5)$$else$type="text/css" $endif$/>
+    <script src="$highlightjs$/highlight.js"></script>
+    <script type="text/javascript">
+    if (window.hljs && document.readyState && document.readyState === "complete") {
+       window.setTimeout(function() {
+          hljs.initHighlighting();
+       }, 0);
+    }
+    </script>
+  $endif$
+
+  $if(highlighting-css)$
+    <style type="text/css">
+     $highlighting-css$
+    </style>
+  $endif$
+
+  $for(css)$
+    <link rel="stylesheet" href="$css$" $if(html5)$$else$type="text/css" $endif$/>
+  $endfor$
+</head>
+
+
+<body>
+  <!-- Running title on each page header -->
+  <div class="running-h1-title"></div>
+  <div class="running-h2-title"></div>
+
+  <div class="container-fluid main-container">
+
+
+$for(include-before)$
+  $include-before$
+$endfor$
+
+  <!-- Front page -->
+  <div class="front-page">
+    $if(title)$
+      <h1 class="title">$title$</h1>
+    $endif$
+
+    $if(subtitle)$
+      <h2 class="subtitle"><span>$subtitle$</span></h2>
+    $endif$
+
+    $if(date)$
+      <h2 class="date">$date$</h2>
+    $endif$
+
+  </div>
+
+  <!-- First page after front page -->
+  <div class="front-matter-container">
+    <!-- Abstract -->
+    $if(abstract)$
+      $if(abstract-title)$
+        <h3 class="abstract">$abstract-title$</h3>
+      $else$
+        <h3 class="abstract">Abstract</h3>
+      $endif$
+      <div class="abstract-content">
+      $abstract$
+      </div>
+    $endif$
+    <!-- Table of content -->
+    $if(toc)$
+      <div id="$idprefix$TOC" class="level1 toc front-matter">
+        $if(toc-title)$
+        <h1 class="toc-title">$toc-title$</h1>
+        $endif$
+      $table-of-contents$
+      </div>
+    $endif$
+  </div>
+
+
+  <!--  Main Report content -->
+  $body$
+
+  $for(include-after)$
+    $include-after$
+  $endfor$
+
+  <!--  Last page design:  Footer -->
+  <footer class="article-footer">
+      $for(author)$
+        $if(author.name)$
+          <h2 class="author">$author.name$</h2>
+          $if(author.affiliation)$
+              <address class="author-afil">
+              $author.affiliation$<br/>$endif$
+              $if(author.email)$
+              <a class="author-email" href="mailto:#">$author.email$</a>
+              </address>
+          $endif$
+        $else$
+          <h2 class="author">$author$</h2>
+        $endif$
+        $if(author.data.address)$
+          <h3 class="affil-header">Affiliation:</h3>
+          <address>
+            <p class="author">$author.data.name$</p>
+            <p class="author-affil">$author.data.affiliation$</p>
+            <p class="author-address">$author.data.address$</p>
+            $if(author.data.email)$<p>E-mail: $author.data.email$</p>$endif$
+            $if(author.data.url)$<p>URL: $author.data.url$</p>$endif$
+          </address>
+        $endif$
+      $endfor$
+
+      <div class="last-page-footer">
+      <p class="jss-meta">
+        <img class="journal-name" alt="Journal of Statistical Software" src="https://www.jstatsoft.org/public/journals/1/homeHeaderTitleImage_en_US.png"> <a class="uri" href="https://www.jstatsoft.org/">http://www.jstatsoft.org/</a><br>
+        published by the Foundation for Open Access Statistics <a class="uri" href="http://www.foastat.org/">http://www.foastat.org/</a>
+      </p>
+      </div>
+  </footer>
+
+ </div>
+
+  <script>
+  // add bootstrap table styles to pandoc tables
+  $$(document).ready(function () {
+    $$('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  });
+  </script>
+
+  <script>
+  // when the page is about to reload via servr, remember the scroll position
+  document.addEventListener('servr:reload', function(e) {
+    sessionStorage.setItem('pagedown-scroll', window.scrollY);
+  });
+  </script>
+
+</body>
+</html>

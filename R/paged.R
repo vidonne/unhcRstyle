@@ -72,10 +72,9 @@ jss_paged = function(
   jss_format = html_paged(
     ..., template = template, css = css,
     csl = csl, highlight = highlight,
-    pandoc_args = c(
-      lua_filters('jss.lua'),
-      '--metadata', 'link-citations=true',
-      pandoc_args
+    .pandoc_args = c(
+      lua_filters('uri-to-fn.lua', 'loft.lua', 'footnotes.lua'), # uri-to-fn.lua must come before footnotes.lua
+      if (!is.null(csl)) c('--csl', csl)
     )
   )
 
@@ -90,6 +89,29 @@ jss_paged = function(
 
   jss_format
 }
+
+
+#' Create a statistical report with UNHCR Brand
+#'
+#' This output format is similar to \code{\link{html_paged}}.
+#' @param ...,css,template,csl,highlight,pandoc_args Arguments passed to \code{\link{html_paged}()}.
+#' @return An R Markdown output format.
+#' @export
+unhcr_paged = function(
+  ..., css = c('unhcr-fonts', 'unhcr-page', 'unhcr'),
+  template = pkg_resource('html', 'unhcr_paged.html'),
+  csl = pkg_resource('csl', 'unhcr.csl'),
+  highlight = NULL, pandoc_args = NULL
+) {
+  html_format(
+    ..., css = css, template = template, .pagedjs = TRUE,
+    .pandoc_args = c(
+      lua_filters('uri-to-fn.lua', 'loft.lua', 'footnotes.lua'), # uri-to-fn.lua must come before footnotes.lua
+      if (!is.null(csl)) c('--csl', csl)
+    )
+  )
+}
+
 
 pagedown_dependency = function(css = NULL, js = FALSE) {
   list(htmltools::htmlDependency(
