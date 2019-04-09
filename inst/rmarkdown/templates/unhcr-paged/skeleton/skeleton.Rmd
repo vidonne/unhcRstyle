@@ -20,7 +20,7 @@ output:
     toc-title: Contents
     abstract-title: Executive Summary
     # change to true for a self-contained document, but it'll be a litte slower for Pandoc to render
-    self_contained: false
+    self_contained: true
     toc: true
     highlight: null
     paged-footnotes: true
@@ -85,7 +85,7 @@ Reproducibility is key in data analysis:
  
  4. It covers the entire analysis workflow: from data import, data tidying, data reshaping, visualization with chart, modeling and generation of report to communicate results. 
 
-![__Diagram:__ Data Science Workflow](data-science.png)
+![__Diagram:__ Data Science Workflow](https://rstudio-education.github.io/tidyverse-cookbook/images/data-science-workflow.png)
  
 This cookbook does not aim at replacing the numerous books available on data science, like the [R for Data Science](https://r4ds.had.co.nz), it is rather a quick reference to be used by colleagues that aims at building skills in the area.  
  
