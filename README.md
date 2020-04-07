@@ -15,13 +15,17 @@ You may install this package from Github:
 remotes::install_github('rstudio/pagedown')
 ```
 
-This package requires a recent version of Pandoc (>= 2.2.3). If you use RStudio, you are recommended to install the [Preview version](https://www.rstudio.com/products/rstudio/download/preview/) (>= 1.2.1070), which has bundled Pandoc 2.x, otherwise you need to install Pandoc separately.
+This package requires a recent version of Pandoc (>= 2.2.3). If you use RStudio, you are recommended to install the [latest version](https://www.rstudio.com/products/rstudio/download/) (>= 1.2.1335), which has bundled Pandoc 2.x, otherwise you need to install Pandoc separately.
 
 Below are some existing R Markdown output formats and examples.
 
 ## Paged HTML documents (`pagedown::html_paged`)
 
 [![A paged HTML document](https://user-images.githubusercontent.com/163582/47673682-58b11880-db83-11e8-87fd-b5e753af7288.png)](https://pagedown.rbind.io)
+
+### Thesis (`pagedown::thesis_paged`)
+
+[![A paged HTML thesis](https://user-images.githubusercontent.com/19177171/60126180-b129cb80-978d-11e9-8e32-7ba48f303b6f.png)](https://pagedown.rbind.io/thesis-paged/)
 
 ### Journal of Statistical Software article (`pagedown::jss_paged`)
 
@@ -41,6 +45,8 @@ Below are some existing R Markdown output formats and examples.
 
 [![A poster of the Jacobs University style](https://user-images.githubusercontent.com/163582/49780277-7b326780-fcd3-11e8-9eb6-69e46292158c.png)](https://pagedown.rbind.io/poster-jacobs/)
 
+Want more poster styles? You may take a look at [Brent Thorne's **posterdown** package](https://github.com/brentthorne/posterdown).
+
 ## Business cards (`pagedown::business_card`)
 
 [![A business card](https://user-images.githubusercontent.com/163582/47741877-68933000-dc49-11e8-94f8-92724b67e9a6.png)](https://pagedown.rbind.io/business-card/)
@@ -56,9 +62,17 @@ Below are some existing R Markdown output formats and examples.
 
 ## Other examples
 
+- Nick Strayer's CV: https://github.com/nstrayer/cv (also includes instructions on how to build your own CV).
+
 - "Template of Exec Summaries with pagedown" by Joshua David Barillas: https://github.com/jdbarillas/executive_summary
 
-- Deepak Kumar Tanwar's CV: https://dktanwar.github.io/CV/ds.html
+- Ulrik Lyngs's CVs: https://ulyngs.github.io/pagedown-cv/
+
+- Jiena Gu McLellan's CV: https://github.com/jienagu/Jiena_McLellan_CV
+
+- Thomas Vroylandt's template for the French Scouts and Guides Association: https://github.com/tvroylandt/sgdf_pagedown
+
+- Beatriz Milz's CV: https://beatrizmilz.github.io/resume/resume.html
 
 ## Authors and contributors
 
