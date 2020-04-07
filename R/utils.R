@@ -35,3 +35,10 @@ to_json = function(x, ..., auto_unbox = TRUE, null = 'null') {
 # don't prefer the port 4321 (otherwise we may see the meaningless error message
 # "createTcpServer: address already in use" too often)
 random_port = function() servr::random_port(NULL)
+
+`%n%` = knitr:::`%n%`
+
+run_servr = function() {
+  # see https://github.com/rstudio/httpuv/issues/250
+  later::with_loop(later::global_loop(), httpuv::service(NA))
+}
