@@ -1,3 +1,12 @@
+# CHANGES IN pagedown VERSION 0.12
+
+
+# CHANGES IN pagedown VERSION 0.11
+
+## NEW FEATURES
+
+- `chrome_print()` now has a new argument `outline`, with which the user can generate the outline bookmarks for the PDF file. Note, this feature requires [Ghostscript](https://www.ghostscript.com) being installed and detected by `tools::find_gs_cmd()` (thanks, @shrektan, #174 and #179).
+
 # CHANGES IN pagedown VERSION 0.10
 
 ## BUG FIXES
