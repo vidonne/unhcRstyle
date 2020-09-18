@@ -1321,7 +1321,7 @@ multiple_line2 <- multiple_line + geom_curve(aes(x = 1979, y = 4500000, xend = 1
 ```
 
 ```{r echo=FALSE, message = FALSE, warning = FALSE}
-ggpubr::ggarrange(left_align(multiple_line2, c("subtitle", "title")), ncol = 1, nrow = 1)
+#ggpubr::ggarrange(left_align(multiple_line2, c("subtitle", "title")), ncol = 1, nrow = 1)
 ```
 
 The `curvature` argument sets the amount of curve: 0 is a straight line, negative values give a left-hand curve and positive values give a right-hand curve.
