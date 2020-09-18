@@ -4,9 +4,14 @@
 \alias{unhcr_paged}
 \title{Create a statistical report with UNHCR Brand}
 \usage{
-unhcr_paged(..., css = c("unhcr-fonts", "unhcr-page", "unhcr"), 
-    template = pkg_resource("html", "unhcr_paged.html"), csl = pkg_resource("csl", 
-        "unhcr.csl"), highlight = NULL, pandoc_args = NULL)
+unhcr_paged(
+  ...,
+  css = c("unhcr-fonts", "unhcr-page", "unhcr"),
+  template = pkg_resource("html", "unhcr_paged.html"),
+  csl = pkg_resource("csl", "unhcr.csl"),
+  highlight = NULL,
+  pandoc_args = NULL
+)
 }
 \arguments{
 \item{..., css, template, csl, highlight, pandoc_args}{Arguments passed to \code{\link{html_paged}()}.}
