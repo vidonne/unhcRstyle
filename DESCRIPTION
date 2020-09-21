@@ -13,6 +13,7 @@ Authors@R: c(
   person("Adam", "Hyde", role = "ctb", comment = "paged.js in resources/js/"),
   person("Min-Zhong", "Lu", role = "ctb", comment = "resume.css in resources/css/"),
   person("Zulko", role = "ctb", comment = "poster-relaxed.css in resources/css/"),
+  person("Edouard", "Legoupil", role = "ctb", comment = "add unhcr_paged template"),
   person()
   )
 Description: Use the paged media properties in CSS and the JavaScript

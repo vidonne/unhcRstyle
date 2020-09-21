@@ -57,6 +57,11 @@ Want more poster styles? You may take a look at [Brent Thorne's **posterdown** p
 
 [![A letter in HTML](https://user-images.githubusercontent.com/163582/47872372-61e8f200-dddc-11e8-839b-d8e8ef8f51eb.png)](https://pagedown.rbind.io/html-letter)
 
+## UNHCR Report (`pagedown::unhcr_paged`)
+
+[![Statistical Report in HTML](https://user-images.githubusercontent.com/163582/47872372-61e8f200-dddc-11e8-839b-d8e8ef8f51eb.png)](https://pagedown.rbind.io/html-letter)
+
+
 ## Other examples
 
 - Nick Strayer's CV: https://github.com/nstrayer/cv (also includes instructions on how to build your own CV).
