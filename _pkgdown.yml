@@ -1,0 +1,58 @@
+title: unhcRstyle
+url: https://edouard-legoupil.github.io/unhcr_pagedown/docs/
+template:
+  params:
+    bootswatch: yeti
+
+navbar:
+  title: unhcRstyle
+  left:
+  - text: "Articles"
+    menu:
+     - text: Demonstration of themes
+       href: articles/unhcr-theme-test.html
+     - text: Demonstration of palette
+       href: articles/unhcr-palette-test.html
+  - text: News
+    href: news/index.html
+  - text: Reference
+    href: reference/index.html
+
+reference:
+  - title: Rmd template
+    contents:
+      - unhcr_paged
+      - unhcr_slide
+      - unhcr_html
+      - unhcr_word
+      - unhcr_ppt
+  - title: Gggplot2 themes
+    contents:
+      - unhcr_style_bar
+      - unhcr_style_bar_big
+      - unhcr_style_histo
+      - unhcr_style_histo_big
+      - unhcr_style_map
+      - unhcr_style_map_big
+      - unhcr_style_scatter
+      - unhcr_style_scatter_big
+  - title: Palette
+    contents:
+      - get_unhcr_palettes
+      - test_pal
+      - test_pal_cont
+      - test_pal_div
+      - test_pal_op
+  - title: Function to apply the palette
+    contents:
+      - scale_color_discrete_unhcr
+      - scale_(color/colour/fill)_discrete_unhcrDiscrete
+      - scale_(color/colour/fill)_opinionated_unhcrDiscrete
+      - scale_(color/colour/fill)_diverging_unhcrContinuous
+      - scale_(color/colour/fill)_continuous_unhcrContinuous
+      - unhcr_repo
+  - title: Other utilities function
+    contents:
+      - format_si
+      - left_align
+      - unhcRstyle

@@ -1,11 +1,11 @@
 ---
 # This will appear in the cover page of your report
-title: "How to quickly produce statistical reports?"
-subtitle: "The UNHCR \"_R-Cookbook_\""
+title: "Protection Monitoring Report"
+subtitle: "profiling vulnerabilities of displaced population"
 date: "`r Sys.Date()`"
 # Content of your abstract / executive summary
 abstract: |
-  This R cookbook is designed to make the process of creating publication-ready graphics and reports with UNHCR style a more __reproducible process__. As the styling is already built-in, users will be able to save time and focus on analysis narrative rather than on technical configuration. It shall support anyone who wants to make advanced graphics and gain efficiency in the generation of statistical reports. 
+  This template is designed to make the process of creating publication-ready graphics and reports with UNHCR style a more __reproducible process__. As the styling is already built-in, users will be able to save time and focus on analysis narrative rather than on technical configuration. It shall support anyone who wants to make advanced graphics and gain efficiency in the generation of statistical reports. 
 # You can multiple author for the reports - they will be inserted in the last page
 author:
   - name: Edouard Legoupil
@@ -15,7 +15,7 @@ author:
   - name: Romain Lesur
     affiliation: Contributor
 output: 
-  pagedown::unhcr_paged:
+  unhcRstyle::unhcr_paged:
     # you can customise the name of TOC & Abstract below
     toc-title: Contents
     abstract-title: Executive Summary
