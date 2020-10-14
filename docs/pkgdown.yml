@@ -4,8 +4,8 @@ pkgdown_sha: ~
 articles:
   unhcr-palette-test: unhcr-palette-test.html
   unhcr-theme-test: unhcr-theme-test.html
-last_built: 2020-10-14T14:50Z
+last_built: 2020-10-14T14:53Z
 urls:
-  reference: https://edouard-legoupil.github.io/unhcr_pagedown/docs//reference
-  article: https://edouard-legoupil.github.io/unhcr_pagedown/docs//articles
+  reference: https://unhcr-web.github.io/unhcRstyle/docs//reference
+  article: https://unhcr-web.github.io/unhcRstyle/docs//articles
 

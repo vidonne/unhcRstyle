@@ -11,8 +11,8 @@ Description: A collection of template, palettes and themes for plots, documents,
 Imports: pagedown,ggplot2
 Suggests: promises, testit, xaringan, pdftools, revealjs
 License: MIT + file LICENSE
-URL: https://github.com/Edouard-Legoupil/unhcr_pagedown
-BugReports: https://github.com/Edouard-Legoupil/unhcr_pagedown/issues
+URL: https://github.com/unhcr-web/unhcRstyle
+BugReports: https://github.com/unhcr-web/unhcRstyle/issues
 SystemRequirements: Pandoc (>= 2.2.3)
 Encoding: UTF-8
 LazyData: true
