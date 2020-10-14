@@ -18,7 +18,7 @@ A package with all necessary elements to quickly implement [UNHCR Brand style](h
    * Continuous color palette 
  
 3. Different [Rmarkdown __template __](https://bookdown.org/yihui/rmarkdown/document-templates.html) to quick-start any report or slides you need to prepare:
-   * Paginated report built on the top of pagedown. You can see an example through the  [UNHCR R Cookbook](https://edouard-legoupil.github.io/unhcr_pagedown/inst/examples/How_to_quickly_produce_statistical_reports.html)
+   * Paginated report built on the top of pagedown. You can see an example through the  [UNHCR R Cookbook](https://unhcr-web.github.io/unhcRstyle/inst/examples/How_to_quickly_produce_statistical_reports.html)
    * [Analysis Repository](http://analysis.unhcr.org) contribution
    * Word with UNHCR style
    * Powerpoint with UNHCR style
@@ -31,7 +31,7 @@ A package with all necessary elements to quickly implement [UNHCR Brand style](h
 install this package from Github:
 
 ```r
-remotes::install_github('edouard-legoupil/unhcr_pagedown')
+remotes::install_github('unhcr-web/unhcRstyle')
 ```
 
 Once the package installed, you should be able to create directly your report with the right template within Rstudio:
@@ -70,7 +70,7 @@ remotes::install_github('unhcr-web/unhcRstyle')
 `pkgdown::build_site()`
 
 
-If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/edouard-legoupil/unhcr_pagedown/issues). 
+If you encounter a clear bug, please file a minimal reproducible example on [github](https://github.com/unhcr-web/unhcRstyle/issues). 
 
 ### References / Inspiration
 
