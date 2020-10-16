@@ -19,8 +19,7 @@ Left align text
 }
 \examples{
 \dontrun{
-ggpubr::ggarrange(left_align(plot1, c("subtitle", "title", "caption")), ncol = 1, 
-    nrow = 1)
+ggpubr::ggarrange(left_align(plot1, c("subtitle", "title", "caption")), ncol = 1, nrow = 1)
 }
 
 }
