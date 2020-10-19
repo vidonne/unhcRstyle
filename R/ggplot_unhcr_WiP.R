@@ -7,10 +7,10 @@ library(extrafont)
 library(ggplot2)
 loadfonts(device = "win")
 # sample data for plot ----
-points <- 
+points <-
   data.frame(
-    x = rep(1:10,3), 
-    y = rep(1:10,3), 
+    x = rep(1:10,3),
+    y = rep(1:10,3),
     z = sort(rep(letters[1:2], 15)),
     w = rep(letters[3:4], 15)
   )
@@ -42,40 +42,45 @@ theme_clean <- function(base_size = 12,
         line = element_line(colour = grey(.80, 1)),
         rect = element_rect(fill = "transparent", linetype = 0, colour = NA),
         text = element_text(colour = grey(.15, 1)),
-        
+
         # titles:
-        plot.title = ggplot2::element_text(hjust = 0, size = ggplot2::rel(1.50), face = "bold"),
-        plot.subtitle = ggplot2::element_text(hjust = 0, size = ggplot2::rel(1.20)),
+        plot.title = ggplot2::element_text(hjust = 0, size = ggplot2::rel(1.50), face = "bold",
+                                           margin = ggplot2::margin(b = base_size/4, unit = "pt")),
+        plot.subtitle = ggplot2::element_text(hjust = 0, size = ggplot2::rel(1.20),
+                                              margin = ggplot2::margin(t = base_size/4, b = base_size/3, unit = "pt")),
         plot.caption = ggplot2::element_text(hjust = 0, color =  grey(.40, 1), face = "plain", size = ggplot2::rel(.90)),
-        
+
         # align title and caption to the left
         plot.title.position = "plot",
         plot.caption.position = "plot",
-        
+
         # axis:
         axis.title = ggplot2::element_text(hjust = 1, color = grey(.40, 1), size = ggplot2::rel(1.0)),
-        axis.line.x = ggplot2::element_line(color = "black", linetype = "solid", size = ggplot2::rel(1.2)), 
-        axis.ticks = ggplot2::element_blank(), 
-        axis.text =  ggplot2::element_text(size = ggplot2::rel(1.0)), 
-        
+        axis.line.x = ggplot2::element_line(color = "black", linetype = "solid", size = ggplot2::rel(1.2)),
+        axis.ticks = ggplot2::element_blank(),
+        axis.text =  ggplot2::element_text(size = ggplot2::rel(1.0)),
+
         # legend:
         legend.position = "top",
         legend.justification = 'right',
         legend.title = ggplot2::element_blank(),
-        legend.text = ggplot2::element_text(size = ggplot2::rel(.90)), 
+        legend.text = ggplot2::element_text(size = ggplot2::rel(.90)),
         legend.text.align = 0,
         legend.direction = "horizontal",
-        
+
         # panel:
-        panel.border = ggplot2::element_blank(), 
+        panel.border = ggplot2::element_blank(),
         panel.grid.minor = ggplot2::element_blank(),
         panel.grid.major.x = ggplot2::element_blank(), # Removes x gridlines.
         # In some cases you will want to change this to remove y gridlines and add x gridlines.
-        panel.grid.major.y = ggplot2::element_line(linetype = "solid", size = ggplot2::rel(.50)), 
+        panel.grid.major.y = ggplot2::element_line(linetype = "solid", size = ggplot2::rel(.50)),
+        panel.spacing = grid::unit(1.5, "lines"),
 
         # strip:
-        strip.background = ggplot2::element_rect(fill = grey(.95, 1), color = grey(.05, 1), size = ggplot2::rel(.90)),
-        strip.text = ggplot2::element_text(hjust = 0, size = ggplot2::rel(1.2)),
+        strip.background = ggplot2::element_rect(fill = "transparent"),
+        strip.text = ggplot2::element_text(hjust = 0, size = ggplot2::rel(1.2),
+                                           margin = ggplot2::margin(t = base_size/3, r = base_size/3,
+                                                                    b = base_size/3, l = base_size/3, unit = "pt")),
 
            )
   )
@@ -84,9 +89,9 @@ theme_clean <- function(base_size = 12,
 
 
 # ggplot using many theme options ----
-ggplot(data = points, 
-       mapping = aes(x = x, y = y, col = factor(x))) + 
-  geom_point(size = 5) + 
+ggplot(data = points,
+       mapping = aes(x = x, y = y, col = factor(x))) +
+  geom_point(size = 5) +
   facet_grid(w ~ z, switch = "y") +
   theme_clean() +
   labs(title = "Test title",
@@ -94,4 +99,4 @@ ggplot(data = points,
        x = "my x axis",
        y = "my y axis",
        caption = "this is a caption",
-       col = "Renamed Legend") 
+       col = "Renamed Legend")
