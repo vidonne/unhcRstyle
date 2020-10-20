@@ -23,12 +23,11 @@ unhcr_word <- function(
   # call the base html_document function
   rmarkdown::word_document(
     toc = toc,
-    toc_float = TRUE,
-    fig_caption = TRUE,
-    fig_height = 5,
-    fig_width = 8,
     toc_depth = 2,
-    includes = rmarkdown::includes(reference_docx = doctemp),
+    fig_height = 6,
+    fig_width = 9,
+    #includes = rmarkdown::includes(reference_docx = doctemp),
+    reference_docx = doctemp,
     ...
   )
 }
