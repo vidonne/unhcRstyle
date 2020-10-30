@@ -106,7 +106,7 @@ theme_unhcr <- function(base_size = 11,
 
         # axis:
         axis.title = ggplot2::element_text(hjust = 1, color = grey(.40, 1), size = ggplot2::rel(1.0)),
-        axis.line.x = ggplot2::element_line(color = "black", linetype = "solid", size = ggplot2::rel(1.2)),
+        #axis.line.x = ggplot2::element_line(color = "black", linetype = "solid", size = ggplot2::rel(1.2)),
         axis.ticks = ggplot2::element_blank(),
         axis.text =  ggplot2::element_text(size = ggplot2::rel(1.0)),
 
