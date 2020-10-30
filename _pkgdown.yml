@@ -36,7 +36,7 @@ reference:
       - unhcr_style_map_big
       - unhcr_style_scatter
       - unhcr_style_scatter_big
-  - title: Palette
+  - title: Color palettes
     contents:
       - get_unhcr_palettes
       - test_pal

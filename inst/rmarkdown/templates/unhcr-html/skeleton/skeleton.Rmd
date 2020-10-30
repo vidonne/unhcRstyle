@@ -8,36 +8,43 @@ output:
     toc: true
 ---
 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
 # About
 
 
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+
+Please, review the below:
+
 * Having a specific title will help avoid having someone browse posts and only finding vague, similar sounding titles
-* Having an itemized, short, and clear tl,dr will help readers understand your content
 * Setting the reader's context with a motivation section makes someone understand how to judge your choices
 * Visualizations that can stand alone, via legends, labels, and captions are more understandable and powerful
 
 
-### Motivation
 
-_NOTE: optimize in this section for **context setting**, as specifically as you can. For instance, this post is generally a set of standards for work in the repo. The specific motivation is to have least friction to current workflow while being able to painlessly aggregate it later._
-
-The knowledge repo was created to consolidate research work that is currently scattered in emails, blogposts, and presentations, so that people didn't redo their work. 
-
-### This Section Says Exactly This Takeaway
-
-Here is some example code.
+## Include table
 
 
-```r
-plot(density(runif(100)), lwd=2, main="Distribution of income in the refugee population")
-abline(h=0, v=0)
+
+```{r cars}
+summary(cars)
 ```
 
-![plot of chunk unnamed-chunk-1](images/unnamed-chunk-1-1.png)
+## Including Plots
 
+You can also embed plots, for example:
 
-_NOTE: in graphs, optimize for being able to **stand alone**. As we aggregate and put things in presentations, we want to not have to recreate and add code to each plot to make it understandable without the entire post around it. When we compare this plot to other people's from other posts, will it be understandable without several paragraphs?_
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
 
-
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
 

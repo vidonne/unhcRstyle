@@ -39,6 +39,7 @@ knitr::kable(mtcars[1:5, 1:5], caption = "An example table")
 ---
 
 ### Slide Title (Slide 4)
+
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```

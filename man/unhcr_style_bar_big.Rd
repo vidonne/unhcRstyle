@@ -6,11 +6,28 @@
 \usage{
 unhcr_style_bar_big()
 }
-\value{
-Return UNHCR Style
-}
 \description{
 Return ggplot2 styling for bar chart
+powerpoints / slides.
+
+R's default settings for plots are designed to make them legible when viewed
+on a monitor that is less than half a metre away. When viewed on a TV screen
+from several metres away, these settings make the axis labels and other text
+too small to read.
+For presentations, the base font size should be 18 to 24 points, depending
+upon the size of the TV and how far away people are sitting.
+}
+\examples{
+{
+    library(ggplot2)
+    data <- data.frame(x = rnorm(100))
+    # Basic plot with title
+    ggplot(data = data, aes(x = x)) + geom_histogram(color = "white", fill = "#2a87c8", 
+        alpha = 0.7) + ggtitle("A blue Histogram") + unhcr_style_histo_big()
+}
+
+
+
 }
 \references{
 https://github.com/gadenbuie/ggpomological/blob/master/R/theme_pomological.R

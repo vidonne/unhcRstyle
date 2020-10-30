@@ -7927,3 +7927,14 @@ ul.nav-flex-footer li {
 .form-signin .btn {
     padding: 10px 20px;
 }
+
+
+.tabset-pills {
+  background: lightgrey;
+}
+
+/* use the > to select children of a certain parent */
+.tabset-pills>li {
+  background: magenta;
+  face: bold;
+}
