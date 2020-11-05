@@ -8,7 +8,10 @@ Authors@R: c(
 Maintainer: Cedric Vidonne <vidonne@unhcr.org>
 Description: A collection of template, palettes and themes for plots, documents, and slides
  based on UNHCR branding
-Imports: pagedown,ggplot2
+Imports: 
+    pagedown,
+    ggplot2,
+    Rd2roxygen
 Suggests: promises, testit, xaringan, pdftools, revealjs
 License: MIT + file LICENSE
 URL: https://github.com/unhcr-web/unhcRstyle

@@ -8,8 +8,16 @@
 #'
 #' @author Edouard Legoupil - with inspiration from bbc
 #' @seealso [ggplot2::theme]
-#' @examples
-#' unhcr_style_histo()
+#' @examples {
+#' library(ggplot2)
+#' data <- data.frame(x=rnorm(100))
+#' # Basic plot with title
+#' ggplot( data=data, aes(x=x)) +
+#'   geom_histogram(color = "white",fill = "#2a87c8", alpha=0.7) +
+#'     ggtitle("A blue Histogram") +
+#'       unhcr_style_histo()
+#' }
+#'
 #'
 #' @export unhcr_style_histo
 #'

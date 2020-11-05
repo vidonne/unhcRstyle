@@ -2,9 +2,15 @@
 #' @rdname unhcr_style_map_big
 #' @title UNHCR ggplot2 theme for maps with big labels for powerpoints
 #'
-#' @description Return ggplot2 styling for maps with big labels for powerpoints
+#' @description Return ggplot2 styling for maps with big labels for
+#' powerpoints / slides.
 #'
-#' @return Return UNHCR Style
+#' R's default settings for plots are designed to make them legible when viewed
+#' on a monitor that is less than half a metre away. When viewed on a TV screen
+#' from several metres away, these settings make the axis labels and other text
+#' too small to read.
+#' For presentations, the base font size should be 18 to 24 points, depending
+#' upon the size of the TV and how far away people are sitting.
 #'
 #' @author Edouard Legoupil -
 #'

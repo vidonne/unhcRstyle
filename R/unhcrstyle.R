@@ -5,7 +5,7 @@
 #'
 #' See the README on
 #' \href{https://github.com/unhcr/unhcRstyle}{GitHub}
-#' @references https://github.com/emilyriederer/Rtistic
+#' @references https://unhcr-web.github.io/unhcRstyle/docs/
 #'
 #' @docType package
 #' @name unhcRstyle

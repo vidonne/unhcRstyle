@@ -277,7 +277,7 @@ This cookbook is based on real UNHCR data.
 
 Last Let's now download (& slightly tidy) data from UNHCR popstat API together with indicators from the World Bank and some geodata.
 
-```{r preparedata, cache = TRUE, message=FALSE, warning=FALSE}
+```{r preparedata, message=FALSE, warning=FALSE}
 
 time_series <-  unhcrdatapackage::end_year_population_totals
 

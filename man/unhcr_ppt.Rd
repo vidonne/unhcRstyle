@@ -4,12 +4,12 @@
 \alias{unhcr_ppt}
 \title{UNHCR ppt template}
 \usage{
-unhcr_ppt(toc = TRUE, ...)
+unhcr_ppt(...)
 }
 \arguments{
-\item{toc}{should a table of contents be displayed?}
-
 \item{...}{additional arguments provided to \code{html_document}}
+
+\item{toc}{should a table of contents be displayed?}
 }
 \description{
 Loads additional style and template file

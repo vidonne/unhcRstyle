@@ -9,53 +9,47 @@
 #' @export
 #'
 unhcr_ppt <- function(
-  toc = TRUE,
   ...) {
 
-  # create file paths to package assets ----
-  css    <- pkg_resource("rmarkdown/resources/html-styles-test.css")
+  # locations of resource files in the package
+  pkg_resource = function(...) {
+    system.file(..., package = "unhcRstyle")
+  }
 
-  ## TODO: FAVICON
-  ## 1. Save favicon.png in inst/rmarkdown/resources
-  ## 2. Pass `in_header = favicon_file` as an argument to rmarkdown::includes() below
-  ## 3. Delete these instructions (##)
-  ## If you do NOT want a footer, delete this section and remove the `in_header` line from `includes` below
-  # create temp file for favicon ----
-  favicon_locn <- pkg_resource('rmarkdown/resources/favicon.png')
-  favicon_html <- paste0('<link rel="shortcut icon" href="',favicon_locn,'">')
-  favicon_file <- tempfile()
-  writeLines(favicon_html, favicon_file)
+  doctemp = pkg_resource("resources/templateUNHCR.pptx")
 
-  ## TODO: FOOTER
-  ## 1. Save footer logo as logo-{theme}.png in inst/rmarkdown/resources
-  ## 2. Update file path passed to `footer_logo <- pkg_resource()`
-  ## 3. Update additional rows of HTML. Consider what should be set as an optional argument
-  ## 4. Delete these instructions (##)
-  ## If you do NOT want a footer, delete this section and remove the `after_body` line from `includes` below
-  # create temp file for footer ----
-  footer_logo <- pkg_resource('rmarkdown/resources/logo-test.png')
-  footer_logo_html <- paste0("<img src = '", footer_logo, "' width = 150>")
-  footer_text_html <- '
-    <p>Produced by XXX. All rights reserved. </p>
-    <p>Contact YOUREMAIL@gmail.com for more information.</p>'
-  footer_tmsp_html <- paste("<p>Last generated at", Sys.time(), "</p>")
-  footer_html <- paste(
-    "<footer><hr/><center><br/>",
-    footer_logo_html,
-    footer_text_html,
-    footer_tmsp_html,
-    "</center></footer>")
-  footer_file <- tempfile()
-  writeLines(footer_html, footer_file)
-
-  # call the base html_document function ----
-  rmarkdown::html_document(
-    css = css,
-    includes = rmarkdown::includes(
-      in_header = favicon_file,
-      after_body = footer_file
-      ),
+  # call the base html_document function
+  rmarkdown::powerpoint_presentation(
+    toc_depth = 2,
+    fig_caption = TRUE,
+    fig_height = 9,
+    fig_width = 18,
+    #includes = rmarkdown::includes(reference_doc = doctemp),
+    reference_doc = doctemp,
     ...
   )
-
 }
+
+
+# https://support.rstudio.com/hc/en-us/articles/360004672913-Rendering-PowerPoint-Presentations-with-RStudio#structuring-the-presentation
+## https://stackoverflow.com/questions/55598415/r-markdown-powerpoint-slide-customization
+# Go into View -> Slide Master to make sure the slides in the master are the format you expect (one time I thought I made the changes, but they showed up on the Home menu and not the Slide Master)
+#
+# Under the Home menu, click the Dropdown under Layout and make sure AT THE LEAST that you see these four elements:
+#
+#     Title
+#     Title and Content
+#     Section Header
+#     Two Content
+### used as follow :
+# Section header (Slide 2)
+## Section header (Slide 3)
+### Slide Title (Slide 4)
+#### Slide content header (Slide 4)
+##### Slide content header (Slide 4)
+## you can upload your template to https://rmarkdown-office-template.herokuapp.com/ and it will test against these rules
+# https://github.com/sol-eng/powerpoint
+## This may require some xml hacking:
+# http://www.brandwares.com/bestpractices/2015/02/xml-hacking-an-introduction/
+# http://www.brandwares.com/bestpractices/2015/08/xml-hacking-table-styles-complete/
+# http://www.brandwares.com/bestpractices/2015/03/xml-hacking-default-table-text/
