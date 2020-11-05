@@ -57,7 +57,7 @@ pal_unhcr <- data.frame(                                 #  element:
 #'
 #' @seealso
 #' \code{\link{pal_blue}} for the UNHCR default blue palette;
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -124,7 +124,7 @@ pal_unhcr <- pal_unhcr[c(5:1, 11:6)] # blue (1 as default) > white (6) > grey > 
 #' @seealso
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with 5 main colors of \code{\link{pal_blue}};
 #' \code{\link{pal_darkblue}} for an alternative blue UNHCR color palette;
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -160,7 +160,7 @@ pal_blue <- data.frame(                               #  element:
 ##|
 ##|  @seealso
 ##|  \code{\link{pal_blue}} for the corresponding color palette;
-##|  \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+##|  \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 ##|  \code{\link{pal_unhcr}} for the default UNHCR color palette;
 ##|  \code{\link{pal_n}} to get \code{n} dedicated colors of a known color palette.
 
@@ -190,7 +190,7 @@ pal_blue <- data.frame(                               #  element:
 #' @seealso
 #' \code{\link{pal_blue}} for the corresponding color palette;
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with 5 main colors of \code{\link{pal_blue}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -239,7 +239,7 @@ names(blue) <- "Blue"
 #' @seealso
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with 5 main colors of \code{\link{pal_blue}};
 #' \code{\link{pal_darkblue}} for alternative to grey UNHCR color palettes;
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -274,7 +274,7 @@ pal_grey <- data.frame(                               #  Element:
 ##|
 ##| @seealso
 ##| \code{\link{pal_grey}} for the corresponding color palette;
-##| \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+##| \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 ##| \code{\link{pal_unhcr}} for the default UNHCR color palette;
 ##| \code{\link{seecol}} to show color palettes;
 ##| \code{\link{usecol}} to use color palettes.
@@ -305,7 +305,7 @@ pal_grey <- data.frame(                               #  Element:
 #' @seealso
 #' \code{\link{pal_grey}} for the corresponding color palette;
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with 5 main colors of \code{\link{pal_blue}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show and use color palettes.
 #'
 #' @export
@@ -369,7 +369,7 @@ names(white) <- "White"
 #'
 #' @seealso
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with all 5 colors of \code{\link{pal_seeblau}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -404,7 +404,7 @@ pal_yellow <- data.frame(                               #  element:
 ##|
 ##| @seealso
 ##| \code{\link{pal_yellow}} for the corresponding color palette;
-##| \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+##| \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 ##| \code{\link{pal_unhcr}} for the default UNHCR color palette;
 ##| \code{\link{seecol}} to show and use color palettes.
 
@@ -434,7 +434,7 @@ pal_yellow <- data.frame(                               #  element:
 #' @seealso
 #' \code{\link{pal_yellow}} for the corresponding color palette;
 #' \code{\link{pal_unhcr}} for the unhcr default color palette with all 5 colors of \code{\link{pal_seeblau}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -482,7 +482,7 @@ names(yellow) <- "Yellow"
 #' @seealso
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with all 5 colors of \code{\link{pal_blue}};
 #' \code{\link{pal_blue}} for an alternative blue UNHCR color palette;
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -517,7 +517,7 @@ pal_darkblue <- data.frame(                               #  element:
 ##|
 ##| @seealso
 ##| \code{\link{pal_darkblue}} for the corresponding color palette;
-##| \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+##| \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 ##| \code{\link{pal_unhcr}} for the default UNHCR color palette;
 ##| \code{\link{seecol}} to show and use color palettes.
 
@@ -547,7 +547,7 @@ pal_darkblue <- data.frame(                               #  element:
 #' @seealso
 #' \code{\link{pal_darkblue}} for the corresponding color palette;
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with all 5 colors of \code{\link{pal_blue}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -594,7 +594,7 @@ names(darkblue) <- "Darkblue"
 #'
 #' @seealso
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with all 5 colors of \code{\link{pal_blue}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -629,7 +629,7 @@ pal_green <- data.frame(                               #  element:
 ##|
 ##| @seealso
 ##| \code{\link{pal_green}} for the corresponding color palette;
-##| \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+##| \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 ##| \code{\link{pal_unhcr}} for the default UNHCR color palette;
 ##| \code{\link{seecol}} to show and use color palettes.
 
@@ -659,7 +659,7 @@ pal_green <- data.frame(                               #  element:
 #' @seealso
 #' \code{\link{pal_green}} for the corresponding color palette;
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with all 5 colors of \code{\link{pal_blue}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -706,7 +706,7 @@ names(green) <- "Green"
 #'
 #' @seealso
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with all 5 colors of \code{\link{pal_blue}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -741,7 +741,7 @@ pal_red <- data.frame(                               #  element:
 ##|
 ##| @seealso
 ##| \code{\link{pal_red}} for the corresponding color palette;
-##| \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+##| \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 ##| \code{\link{pal_unhcr}} for the default UNHCR color palette;
 ##| \code{\link{seecol}} to show and use color palettes.
 
@@ -771,7 +771,7 @@ pal_red <- data.frame(                               #  element:
 #' @seealso
 #' \code{\link{pal_red}} for the corresponding color palette;
 #' \code{\link{pal_unhcr}} for the UNHCR default color palette with all 5 colors of \code{\link{pal_blue}};
-#' \code{\link{pal_unhcr_pref}} for a UNHCR color palette with all preferred colors;
+#' \code{\link{pal_unhcr_primary}} for a UNHCR color palette with primary colors;
 #' \code{\link{seecol}} to show color palettes;
 #' \code{\link{usecol}} to use color palettes.
 #'
@@ -788,47 +788,41 @@ names(red) <- "Red"
 
 # (C) Other combinations of UNHCR color palettes: --------
 
-#  (1) pal_unhcr_pref: Scale of all 8 preferred colors: ------
+#  (1) pal_unhcr_primary: Scale of all 4 preferred colors: ------
 
 
 #   (+) Original definition: ----
 
-pal_unhcr_pref <- data.frame( # Element:
+pal_unhcr_primary <- data.frame( # Element:
   "Blue"     = blue,          # pal_blue[[5]],     #  1. blue
   "Black"    = black,         # pal_grey[[6]],     #  2. black
   "White"    = white,         # pal_unhcr[[6]],    #  3. white
   "Yellow"   = yellow,        # pal_yellow[[5]],   #  4. yellow
-  "Darkblue" = darkblue,      # pal_darkblue[[6]], #  5. darkblue
-  "Green"    = green,         # pal_green[[5]],    #  6. green
-  "Red"      = red,           # pal_red[[5]],      #  7. red
-  "Grey"     = grey,          # grey[[4]],         #  8. grey
   stringsAsFactors = FALSE)
 
 #   (a) Documentation: ----
 
-#' UNHCR preferred colors in a color palette.
+#' UNHCR main colors from the brand book in a color palette.
 #'
-#' \code{pal_unhcr_pref} provides an additional UNHCR color palette
-#' that collects the preferred color of each palette (including primary and data visualization colors)
-#' as a data frame containing 8 colors.
+#' \code{pal_unhcr_primary} provides an additional UNHCR color palette
+#' that collects the primary UNHCR color as a data frame containing 4 colors.
 #'
-#' See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2P0CGAY.html} and
-#' \url{https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A2HOVFP9.html} for details.
+#' See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2P0CGAY.html} for details.
 #'
 #' @examples
-#' pal_unhcr_pref
-#' dim(pal_unhcr_pref)  # 1 8
+#' pal_unhcr_primary
+#' dim(pal_unhcr_primary)  # 1 4
 #'
 #' # Access by position:
-#' pal_unhcr_pref[1]    # color blue (as df)
-#' pal_unhcr_pref[[1]]  # color value "#0072BC"
+#' pal_unhcr_primary[1]    # color blue (as df)
+#' pal_unhcr_primary[[1]]  # color value "#0072BC"
 #'
 #' # Access by name:
-#' pal_unhcr_pref["blue"]   # color "blue5" (as df)
-#' pal_unhcr_pref[["blue"]] # color value "#0072BC"
+#' pal_unhcr_primary["blue"]   # color "blue5" (as df)
+#' pal_unhcr_primary[["blue"]] # color value "#0072BC"
 #'
 #' # Plotting palette:
-#' seecol(pal_unhcr_pref)
+#' seecol(pal_unhcr_primary)
 #'
 #' @family color palettes
 #'
@@ -841,25 +835,74 @@ pal_unhcr_pref <- data.frame( # Element:
 
 
 ## Check:
-# pal_unhcr_pref
-# seecol(pal_unhcr_pref)
+# pal_unhcr_primary
+# seecol(pal_unhcr_primary)
 
+
+#  (2) pal_unhcr_graphic: Scale of all XX preferred colors for graphic creation: ------
+
+
+#   (+) Original definition: ----
+
+pal_unhcr_graphic <- data.frame( # Element:
+  "Blue"     = blue,          # pal_blue[[5]],     #  1. blue
+  "Darkblue" = darkblue,      # pal_darkblue[[6]], #  2. darkblue
+  "Green"    = green,         # pal_green[[5]],    #  3. green
+  "Grey3"    = pal_grey[[3]], # pal_grey[[3]],     #  4. grey3
+  "Red"      = red,           # pal_red[[5]],      #  5. red
+  "Blue3"    = pal_blue[[3]], # pal_blue[[3]],     #  6. blue3
+  stringsAsFactors = FALSE)
+
+#   (a) Documentation: ----
+
+#' UNHCR preferred graphic colors to be use as a main set for graphics creation.
+#'
+#' \code{pal_unhcr_graphic} provides an additional UNHCR color palette
+#' that collects the preferred UNHCR colors for graphics as a data frame containing 6 colors.
+#'
+#' See \url{https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A2HOVFP9.html} for details.
+#'
+#' @examples
+#' pal_unhcr_graphic
+#' dim(pal_unhcr_graphic)  # 1 6
+#'
+#' # Access by position:
+#' pal_unhcr_graphic[1]    # color blue (as df)
+#' pal_unhcr_graphic[[1]]  # color value "#0072BC"
+#'
+#' # Access by name:
+#' pal_unhcr_graphic["blue"]   # color "blue5" (as df)
+#' pal_unhcr_graphic[["blue"]] # color value "#0072BC"
+#'
+#' # Plotting palette:
+#' seecol(pal_unhcr_graphic)
+#'
+#' @family color palettes
+#'
+#' @seealso
+#' \code{\link{pal_unhcr}} for the default UNHCR color palette;
+#' \code{\link{seecol}} to show color palettes;
+#' \code{\link{usecol}} to use color palettes.
+#'
+#' @export
+
+
+## Check:
+# pal_unhcr_graphic
+# seecol(pal_unhcr_graphic)
 
 
 ## Lookup list of palettes: ----------
 
 ## Definition: -------
-all_palun_viz <- c("pal_blue", "pal_grey", "pal_darkblue", "pal_green", "pal_red", "pal_yellow")
-all_palun <- c("pal_unhcr", all_palun_viz, "pal_unhcr_pref")
+all_palunhcr_graphic <- c("pal_blue", "pal_grey", "pal_darkblue", "pal_green", "pal_red", "pal_yellow", "pal_unhcr_graphic")
+all_palunhcr <- c("pal_unhcr", "pal_unhcr_primary", all_palunhcr_graphic)
 
 
 ## ToDo: ------
 
 # (+) Additional elements:
-#   - color pairing
-#   - continuous color palette
-#   - ggplot_addon: provide complete ggplot theme(s)
-#   - fonts?
+#   -Fix calling above all_palunhcr lists
 
 
 

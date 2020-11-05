@@ -219,7 +219,7 @@ getpal_key <- function(pal = "all", n = "all", alpha = NA) {
 
   # Getting palettes by keyword: -----
   keys <- c("all", "unhcr_all", "all_unhcr",  # all palettes
-            "viz", "unhcr_viz", "viz_unhcr"   # the viz palettes.
+            "graphic", "unhcr_graphic", "graphic_unhcr"   # the graphic palettes.
   )
 
   # Throw an error, if no valid keyword is specified:
@@ -229,7 +229,7 @@ getpal_key <- function(pal = "all", n = "all", alpha = NA) {
   } else {
 
     if ( pal %in% keys[1:3] )   key <- "all"
-    if ( pal %in% keys [4:6] )  key <- "viz"
+    if ( pal %in% keys [4:6] )  key <- "graphic"
   }
 
   # Get all color palettes with the prefix "pal_" from the environment: ------
@@ -237,8 +237,8 @@ getpal_key <- function(pal = "all", n = "all", alpha = NA) {
   # Distinguish 2 cases: ------
   pal_names <- switch(
     key,
-    all = all_palun,
-    viz = all_palun_viz,
+    all = all_palunhcr,
+    graphic = all_palunhcr_graphic,
   )
 
   # Get list of palettes specified by keyword:
