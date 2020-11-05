@@ -1,14 +1,16 @@
-#' Create a paged HTML document suitable for printing with UNHCR Brand
+#' @name unhcr_templ_paged
+#' @rdname unhcr_templ_paged
+#' @title Create a paged HTML document suitable for printing with UNHCR Brand
 #'
 #' @param ... Arguments passed to
 #'   \code{pagedown::\link[pagedown]{html_paged}}.
 #' @references \url{https://pagedown.rbind.io}
 #' @return An R Markdown output format.
 #' @import stats utils pagedown
-#' @export
+#' @export unhcr_templ_paged
 #'
 #'
-unhcr_paged = function(...) {
+unhcr_templ_paged = function(...) {
   cssfile <- function(...) {
     system.file("resources", "css", paste0(..., ".css"), package = "unhcRstyle")
   }

@@ -11,6 +11,12 @@ tldr: This is short description of the content and findings of the post.
 thumbnail: images/unnamed-chunk-1-1.png
 ---
 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+extrafont::loadfonts(quiet=TRUE)
+```
+
 _NOTE: In the TL,DR, optimize for **clarity** and **comprehensiveness**. The goal is to convey the post with the least amount of friction, especially since notebooks require much more scrolling than blog posts. Make the reader get a correct understanding of the post's takeaway, and the points supporting that takeaway without having to strain through paragraphs and tons of prose. Bullet points are great here, but are up to you. Try to avoid academic paper style abstracts._
 
 * Having a specific title will help avoid having someone browse posts and only finding vague, similar sounding titles
@@ -51,7 +57,6 @@ plot(density(runif(100)), lwd=2, main="Distribution of income in the refugee pop
 abline(h=0, v=0)
 ```
 
-![plot of chunk unnamed-chunk-1](images/unnamed-chunk-1-1.png)
 
 
 _NOTE: in graphs, optimize for being able to **stand alone**. As we aggregate and put things in presentations, we want to not have to recreate and add code to each plot to make it understandable without the entire post around it. When we compare this plot to other people's from other posts, will it be understandable without several paragraphs?_

@@ -1,6 +1,6 @@
 Package: unhcRstyle
 Type: Package
-Title: Paginate the HTML Output of R Markdown with CSS for Print
+Title: Use consistently UNHCR branding though preconfigured palette, ggplot2 themes and Rmd template
 Version: 0.1.0
 Authors@R: c(
   person("Cedric", "Vidonne", role = c("aut", "cre"), email = "vidonne@unhcr.org"),
@@ -8,15 +8,13 @@ Authors@R: c(
 Maintainer: Cedric Vidonne <vidonne@unhcr.org>
 Description: A collection of template, palettes and themes for plots, documents, and slides
  based on UNHCR branding
-Imports: 
-    pagedown,
-    ggplot2,
-    Rd2roxygen
+Imports: pagedown,ggplot2, knitr
 Suggests: promises, testit, xaringan, pdftools, revealjs
 License: MIT + file LICENSE
 URL: https://github.com/unhcr-web/unhcRstyle
 BugReports: https://github.com/unhcr-web/unhcRstyle/issues
 SystemRequirements: Pandoc (>= 2.2.3)
+VignetteBuilder: knitr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1

@@ -1,14 +1,15 @@
-#' UNHCR ppt template
+#' @name unhcr_templ_ppt
+#' @rdname unhcr_templ_ppt
+#' @title  UNHCR ppt template
 #'
 #' Loads additional style and template file
 #'
 #' @references https://raw.githubusercontent.com/dr-harper/example-rmd-templates/master/R/my_html_format.R
 #'
-#' @param toc should a table of contents be displayed?
 #' @param ... additional arguments provided to \code{html_document}
-#' @export
+#' @export unhcr_templ_ppt
 #'
-unhcr_ppt <- function(
+unhcr_templ_ppt <- function(
   ...) {
 
   # locations of resource files in the package

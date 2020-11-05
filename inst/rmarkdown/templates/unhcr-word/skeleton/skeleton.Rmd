@@ -3,13 +3,14 @@ title: "Custom R Markdown Documents"
 author: ""
 date: ""
 output:
-  unhcRstyle::unhcr_word:
+  unhcRstyle::unhcr_templ__word:
     toc: true
 ---
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+extrafont::loadfonts(quiet=TRUE)
 ```
 
 ## R Markdown

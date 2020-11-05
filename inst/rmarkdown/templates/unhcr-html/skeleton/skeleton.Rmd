@@ -4,14 +4,16 @@ author: "Your name"
 date: " `r format(Sys.Date(),  '%d %B %Y')`"
 always_allow_html: yes
 output:
-  unhcRstyle::unhcr_html:
+  unhcRstyle::unhcr_templ_html:
     toc: true
 ---
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+extrafont::loadfonts(quiet=TRUE)
 ```
+
 
 
 # About

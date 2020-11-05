@@ -31,18 +31,6 @@
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcRstyle.html</loc>
   </url>
   <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_html.html</loc>
-  </url>
-  <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_paged.html</loc>
-  </url>
-  <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_ppt.html</loc>
-  </url>
-  <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_slide.html</loc>
-  </url>
-  <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_style_bar.html</loc>
   </url>
   <url>
@@ -67,7 +55,19 @@
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_style_scatter_big.html</loc>
   </url>
   <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_word.html</loc>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_html.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_paged.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_ppt.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_slide.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_word.html</loc>
   </url>
   <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//articles/unhcr-palette-test.html</loc>

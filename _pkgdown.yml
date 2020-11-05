@@ -21,11 +21,12 @@ navbar:
 reference:
   - title: Rmd template
     contents:
-      - unhcr_paged
-      - unhcr_slide
-      - unhcr_html
-      - unhcr_word
-      - unhcr_ppt
+      - unhcr_templ_paged
+      - unhcr_templ_slide
+      - unhcr_templ_html
+      - unhcr_templ_word
+      - unhcr_templ_ppt
+      - unhcr_templ__repo
   - title: Gggplot2 themes
     contents:
       - unhcr_style_bar
@@ -45,12 +46,10 @@ reference:
       - test_pal_op
   - title: Function to apply the palette
     contents:
-      - scale_color_discrete_unhcr
       - scale_(color/colour/fill)_discrete_unhcrDiscrete
       - scale_(color/colour/fill)_opinionated_unhcrDiscrete
       - scale_(color/colour/fill)_diverging_unhcrContinuous
       - scale_(color/colour/fill)_continuous_unhcrContinuous
-      - unhcr_repo
   - title: Other utilities function
     contents:
       - format_si

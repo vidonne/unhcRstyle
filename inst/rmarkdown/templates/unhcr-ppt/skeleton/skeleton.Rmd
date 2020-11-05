@@ -4,11 +4,15 @@ author: "Your name"
 date: " `r format(Sys.Date(),  '%d %B %Y')`"
 always_allow_html: yes
 output:
-  unhcRstyle::unhcr_ppt:
+  unhcRstyle::unhcr_templ__ppt:
     toc: true
 ---
 
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+extrafont::loadfonts(quiet=TRUE)
+```
 
 # Section header
 

@@ -3,9 +3,15 @@ title: "Custom R Markdown Documents"
 author: ""
 date: ""
 output:
-  unhcRstyle::unhcr_slide:
+  unhcRstyle::unhcr_templ__slide:
     toc: true
 ---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+extrafont::loadfonts(quiet=TRUE)
+```
 
 # About
 

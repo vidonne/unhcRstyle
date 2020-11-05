@@ -10,8 +10,8 @@ pkg_resource <- function(...) {
 #' @description Left align text
 #'
 #'
-#' @param  plot_name
-#' @param  pieces
+#' @param  plot_name name of the plot
+#' @param  pieces elements like title, subtitle, caption
 #'
 #' @return ggplot2 object with aligned title
 #'

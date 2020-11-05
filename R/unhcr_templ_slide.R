@@ -1,4 +1,6 @@
-#' UNHCR HTML slide
+#' @name unhcr_templ_slide
+#' @rdname unhcr_templ_slide
+#' @title UNHCR HTML slide
 #'
 #' Loads additional style and template file
 #'
@@ -6,9 +8,11 @@
 #'
 #' @param ... additional arguments provided to \code{moon_reader}
 #' @return An R Markdown output format.
-#' @export
 #'
-unhcr_slide <- function(...) {
+#' @export unhcr_templ_slide
+
+
+unhcr_templ_slide <- function(...) {
 
   # confirm deps ----
   if (!requireNamespace("xaringan", quietly = TRUE)) {

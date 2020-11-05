@@ -44,6 +44,7 @@ ADD SOMETHING HERE!
 The colors in the discrete palette are:
 
 ```{r}
+library(scales)
 scales::show_col(test_pal)
 ```
 

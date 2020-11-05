@@ -7,9 +7,9 @@
 left_align(plot_name, pieces)
 }
 \arguments{
-\item{plot_name}{}
+\item{plot_name}{name of the plot}
 
-\item{pieces}{}
+\item{pieces}{elements like title, subtitle, caption}
 }
 \value{
 ggplot2 object with aligned title
@@ -19,8 +19,7 @@ Left align text
 }
 \examples{
 \dontrun{
-ggpubr::ggarrange(left_align(plot1, c("subtitle", "title", "caption")), ncol = 1, 
-    nrow = 1)
+ggpubr::ggarrange(left_align(plot1, c("subtitle", "title", "caption")), ncol = 1, nrow = 1)
 }
 
 }

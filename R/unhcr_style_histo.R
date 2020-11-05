@@ -10,6 +10,7 @@
 #' @seealso [ggplot2::theme]
 #' @examples {
 #' library(ggplot2)
+#' extrafont::loadfonts(quiet=TRUE)
 #' data <- data.frame(x=rnorm(100))
 #' # Basic plot with title
 #' ggplot( data=data, aes(x=x)) +

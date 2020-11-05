@@ -15,7 +15,7 @@ author:
   - name: Romain Lesur
     affiliation: Contributor
 output: 
-  unhcRstyle::unhcr_paged:
+  unhcRstyle::unhcr_templ_paged:
     # you can customise the name of TOC & Abstract below
     toc-title: Contents
     abstract-title: Executive Summary
@@ -29,7 +29,11 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+extrafont::loadfonts(quiet=TRUE)
 ```
+
+
+
 
 ## R Markdown
 
