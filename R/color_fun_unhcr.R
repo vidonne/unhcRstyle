@@ -105,10 +105,10 @@ usecol <- function(pal = pal_unhcr,
   pal_def <- FALSE  # assume default, that an undefined palette is used.
   # Check this in the next step (this variable serves to control flow).
 
-  if ( all(unlist(lapply(all_palun, exists))) ) {  # test whether the palettes in all_palun are defined.
+  if ( all(unlist(lapply(all_palunhcr, exists))) ) {  # test whether the palettes in all_palunhcr are defined.
 
     # Test whether equal to any palette:
-    all_pals1 <- lapply(all_palun, get)  # get all palettes from the first part.
+    all_pals1 <- lapply(all_palunhcr, get)  # get all palettes from the first part.
 
   } else {  # if not all palettes are defined:
 
@@ -139,7 +139,7 @@ usecol <- function(pal = pal_unhcr,
     # If input fits with any palette:
     if ( any(pal_ix) & length(pal_inp) >= n) {
 
-      pal_name <- all_palun[pal_ix]  # get palette name
+      pal_name <- all_palunhcr[pal_ix]  # get palette name
 
       pal <- pal_inp  # redefine.
 
