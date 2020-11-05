@@ -80,4 +80,5 @@ If you encounter a clear bug, please file a minimal reproducible example on [git
  * https://hneth.github.io/unikn/
  * https://bbc.github.io/rcookbook/
  * https://bookdown.org/yihui/rmarkdown-cookbook/
+ * https://www.shanelynn.ie/themes-and-colours-for-r-ggplots-with-ggthemr/
  

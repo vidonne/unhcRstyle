@@ -18,20 +18,21 @@ unhcr_html <- function(
     system.file(..., package = "unhcRstyle")
   }
 
-  css    = pkg_resource("rmarkdown/resources/styles.css")
-  footer = pkg_resource("rmarkdown/resources/footer.html")
+  css    = pkg_resource("resources/unhcr-bootstrap.css")
+  footer = pkg_resource("resources/header.html")
 
   # call the base html_document function
   rmarkdown::html_document(
     toc = toc,
     toc_float = TRUE,
-    fig_width = 6.5,
-    fig_height = 4,
-    theme = "lumen",
+    fig_caption = TRUE,
+    fig_height = 5,
+    fig_width = 8,
+    toc_depth = 2,
     code_folding = "show",
     css = css,
-    number_sections = TRUE,
-    includes = rmarkdown::includes(after_body = footer),
+    #number_sections = TRUE,
+    includes = rmarkdown::includes(in_header = footer),
     ...
   )
 }
