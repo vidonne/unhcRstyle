@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UNHCR preferred graphic colors to be use as a main set for graphics creation. — all_palunhcr_graphic • unhcRstyle</title>
+<title>UNHCR ggplot2 theme for histogram — unhcr_style_histo • unhcRstyle</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="UNHCR preferred graphic colors to be use as a main set for graphics creation. — all_palunhcr_graphic" />
-<meta property="og:description" content="pal_unhcr_graphic provides an additional UNHCR color palette
-that collects the preferred UNHCR colors for graphics as a data frame containing 6 colors." />
+<meta property="og:title" content="UNHCR ggplot2 theme for histogram — unhcr_style_histo" />
+<meta property="og:description" content="Return ggplot2 styling for histogram" />
 
 
 
@@ -121,57 +120,41 @@ that collects the preferred UNHCR colors for graphics as a data frame containing
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>UNHCR preferred graphic colors to be use as a main set for graphics creation.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/unhcr-web/unhcRstyle/blob/master/R/color_def_unhcr.R'><code>R/color_def_unhcr.R</code></a></small>
-    <div class="hidden name"><code>all_palunhcr_graphic.Rd</code></div>
+    <h1>UNHCR ggplot2 theme for histogram</h1>
+    <small class="dont-index">Source: <a href='https://github.com/unhcr-web/unhcRstyle/blob/master/R/unhcr_style_histo.R'><code>R/unhcr_style_histo.R</code></a></small>
+    <div class="hidden name"><code>unhcr_style_histo.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>pal_unhcr_graphic</code> provides an additional UNHCR color palette
-that collects the preferred UNHCR colors for graphics as a data frame containing 6 colors.</p>
+    <p>Return ggplot2 styling for histogram</p>
     </div>
 
-    <pre class="usage"><span class='va'>all_palunhcr_graphic</span></pre>
+    <pre class="usage"><span class='fu'>unhcr_style_histo</span><span class='op'>(</span><span class='op'>)</span></pre>
 
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>An object of class <code>character</code> of length 7.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>See <a href='https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A2HOVFP9.html'>https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A2HOVFP9.html</a> for details.</p>
+    <p>Return UNHCR Style</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='pal_unhcr.html'>pal_unhcr</a></code> for the default UNHCR color palette;
-<code><a href='seecol.html'>seecol</a></code> to show color palettes;
-<code><a href='usecol.html'>usecol</a></code> to use color palettes.</p>
-<p>Other color palettes: 
-<code><a href='pal_blue.html'>pal_blue</a></code>,
-<code><a href='pal_darkblue.html'>pal_darkblue</a></code>,
-<code><a href='pal_green.html'>pal_green</a></code>,
-<code><a href='pal_grey.html'>pal_grey</a></code>,
-<code><a href='pal_red.html'>pal_red</a></code>,
-<code><a href='pal_unhcr_graphic.html'>pal_unhcr_graphic</a></code>,
-<code><a href='pal_unhcr.html'>pal_unhcr</a></code>,
-<code><a href='pal_yellow.html'>pal_yellow</a></code></p></div>
+    <div class='dont-index'><p>[ggplot2::theme]</p></div>
+    <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
+
+    <p>Edouard Legoupil - with inspiration from bbc</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='va'>pal_unhcr_graphic</span>
-</div><div class='output co'>#&gt;         Blue Darkblue   Green   Grey3     Red   Blue3
-#&gt; Blue #0072BC  #18375F #00B398 #999999 #EF4A60 #66AAD7</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/dim.html'>dim</a></span><span class='op'>(</span><span class='va'>pal_unhcr_graphic</span><span class='op'>)</span>  <span class='co'># 1 6</span>
-</div><div class='output co'>#&gt; [1] 1 6</div><div class='input'>
-<span class='co'># Access by position:</span>
-<span class='va'>pal_unhcr_graphic</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span>    <span class='co'># color blue (as df)</span>
-</div><div class='output co'>#&gt;         Blue
-#&gt; Blue #0072BC</div><div class='input'><span class='va'>pal_unhcr_graphic</span><span class='op'>[[</span><span class='fl'>1</span><span class='op'>]</span><span class='op'>]</span>  <span class='co'># color value "#0072BC"</span>
-</div><div class='output co'>#&gt; [1] "#0072BC"</div><div class='input'>
-<span class='co'># Access by name:</span>
-<span class='va'>pal_unhcr_graphic</span><span class='op'>[</span><span class='st'>"blue"</span><span class='op'>]</span>   <span class='co'># color "blue5" (as df)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in `[.data.frame`(pal_unhcr_graphic, "blue"): undefined columns selected</span></div><div class='input'><span class='va'>pal_unhcr_graphic</span><span class='op'>[[</span><span class='st'>"blue"</span><span class='op'>]</span><span class='op'>]</span> <span class='co'># color value "#0072BC"</span>
-</div><div class='output co'>#&gt; NULL</div><div class='input'>
-<span class='co'># Plotting palette:</span>
-<span class='fu'><a href='seecol.html'>seecol</a></span><span class='op'>(</span><span class='va'>pal_unhcr_graphic</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span class='error'>Error in lapply(all_palun, exists): object 'all_palun' not found</span></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='op'>{</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='fu'>extrafont</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/extrafont/man/loadfonts.html'>loadfonts</a></span><span class='op'>(</span>quiet<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
+<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span><span class='fl'>100</span><span class='op'>)</span><span class='op'>)</span>
+<span class='co'># Basic plot with title</span>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span> data<span class='op'>=</span><span class='va'>data</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>x</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='st'>"white"</span>,fill <span class='op'>=</span> <span class='st'>"#2a87c8"</span>, alpha<span class='op'>=</span><span class='fl'>0.7</span><span class='op'>)</span> <span class='op'>+</span>
+    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ggtitle</a></span><span class='op'>(</span><span class='st'>"A blue Histogram"</span><span class='op'>)</span> <span class='op'>+</span>
+      <span class='fu'>unhcr_style_histo</span><span class='op'>(</span><span class='op'>)</span>
+<span class='op'>}</span>
+</div><div class='output co'>#&gt; <span class='message'>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></div><div class='img'><img src='unhcr_style_histo-1.png' alt='' width='700' height='433' /></div><div class='input'>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
