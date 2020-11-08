@@ -3,7 +3,7 @@
 \docType{data}
 \name{test_pal_div}
 \alias{test_pal_div}
-\title{Define three colors for endpoints of diverging continuous pallete (high, middle, low)}
+\title{Define three colors for endpoints of diverging continuous palette}
 \format{
 An object of class \code{character} of length 3.
 }
@@ -11,6 +11,11 @@ An object of class \code{character} of length 3.
 test_pal_div
 }
 \description{
-Define three colors for endpoints of diverging continuous pallete (high, middle, low)
+(high, middle, low)
+}
+\examples{
+{
+seecol(test_pal_div)  # view color and details
+}
 }
 \keyword{datasets}
