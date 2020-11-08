@@ -3,6 +3,29 @@ pkg_resource <- function(...) {
   system.file(..., package = "unhcrstyle")
 }
 
+#' @name using
+#' @rdname using
+#' @title Load required packages for the notebook
+#'
+#'
+#' @param  ... list of packages required
+#'
+#' @examples
+#' \dontrun{
+#' using('tidyverse','gganimate','gghighlight','ggpubr', 'dplyr', 'tidyr')
+#' }
+#'
+#' @export using
+
+using <- function(...) {
+  libs <- unlist(list(...))
+  req <- unlist(lapply(libs,require,character.only = TRUE))
+  need <- libs[req == FALSE]
+  if (length(need) > 0) {
+    install.packages(need, repos = "http://cran.rstudio.com")
+    lapply(need,require,character.only = TRUE)
+  }
+}
 
 #' @name left_align
 #' @rdname left_align

@@ -15,7 +15,7 @@ test_pal_div
 }
 \examples{
 {
-seecol(test_pal_div)  # view color and details
+    seecol(test_pal_div)  # view color and details
 }
 }
 \keyword{datasets}

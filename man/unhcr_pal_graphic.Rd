@@ -19,19 +19,19 @@ See \url{https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A
 }
 \examples{
 {
-unhcr_pal_graphic
-dim(unhcr_pal_graphic)
-
-# Access by position:
-unhcr_pal_graphic[1]    # color blue (as df)
-unhcr_pal_graphic[[1]]  # color value "#0072BC"
-
-# Access by name:
-unhcr_pal_graphic["Blue"]   # color "blue5" (as df)
-unhcr_pal_graphic[["Blue"]] # color value "#0072BC"
-
-# Plotting palette:
-seecol(unhcr_pal_graphic)
+    unhcr_pal_graphic
+    dim(unhcr_pal_graphic)
+    
+    # Access by position:
+    unhcr_pal_graphic[1]  # color blue (as df)
+    unhcr_pal_graphic[[1]]  # color value '#0072BC'
+    
+    # Access by name:
+    unhcr_pal_graphic["Blue"]  # color 'blue5' (as df)
+    unhcr_pal_graphic[["Blue"]]  # color value '#0072BC'
+    
+    # Plotting palette:
+    seecol(unhcr_pal_graphic)
 }
 
 }

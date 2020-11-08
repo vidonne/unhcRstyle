@@ -3,6 +3,7 @@
 #' @title  rgb2hex color conversion function in grDevices
 #' @description Utility functions to access and plot color palettes
 #' @export rgb2hex
+#' @keywords internal
 #' @author ipda | unhcr.org | 2020
 #' @examples {
 #' rgb2hex(255, 255, 255)
@@ -45,6 +46,7 @@ col2hex <- function(col, alpha = alpha) {
 #' @title  isHexCol color conversion function in grDevices
 #' @description Helper function to detect HEX-colors
 #' @export isHexCol
+#' @keywords internal
 #' @author ipda | unhcr.org | 2020
 #' @examples {
 #' isHexCol("black")
@@ -61,6 +63,7 @@ isHexCol <- function(color) {
 #' @title  isColl color conversion function in grDevices
 #' @description Helper function to detect any color (in an individual character string)
 #' @export isCol
+#' @keywords internal
 #' @author ipda | unhcr.org | 2020
 #' @examples {
 #' isCol("white")
@@ -81,6 +84,7 @@ isCol <- function(color) {
 #' @title  Parse a palette input: Color getting functions
 #' @description Helper function
 #' @export parse_pal
+#' @keywords internal
 #' @author ipda | unhcr.org | 2020
 parse_pal <- function(pal) {
 
@@ -187,6 +191,7 @@ parse_pal <- function(pal) {
 #' @title  Get a palette or list of palettes by keyword
 #' @description Helper function
 #' @export getpal_key
+#' @keywords internal
 #' @author ipda | unhcr.org | 2020
 getpal_key <- function(pal = "all", n = "all", alpha = NA) {
   # Process the 'pal' argument: Getting palettes by keyword
@@ -254,6 +259,7 @@ getpal_key <- function(pal = "all", n = "all", alpha = NA) {
 #' @title  Plot a shape in a certain color
 #' @description Helper function
 #' @export plot_shape
+#' @keywords internal
 #' @author ipda | unhcr.org | 2020
 plot_shape <- function(pos_x, pos_y,  # midpoint of shape
                        col_fill,      # fill color
@@ -303,6 +309,7 @@ plot_shape <- function(pos_x, pos_y,  # midpoint of shape
 #' @title  Plot a vector of colors (as circles or rectangles)
 #' @description Helper function
 #' @export plot_col
+#' @keywords internal
 #' @author ipda | unhcr.org | 2020
 plot_col <- function(x,         # a *vector* of colors to be plotted.
                      ypos = 1,  # position on y axis.

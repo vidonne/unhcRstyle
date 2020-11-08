@@ -20,10 +20,10 @@ See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2
 }
 \examples{
 {
-unhcr_blue  # HEX character "#0072BC" (as value)
-all.equal(unhcr_blue, unhcr_pal_blue[[5]])  # TRUE (same HEX values)
-
-seecol(unhcr_blue)  # view color and details
+    unhcr_blue  # HEX character '#0072BC' (as value)
+    all.equal(unhcr_blue, unhcr_pal_blue[[5]])  # TRUE (same HEX values)
+    
+    seecol(unhcr_blue)  # view color and details
 }
 }
 \seealso{

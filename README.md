@@ -64,6 +64,9 @@ Once the package installed, you should be able to create directly your report wi
 ![preview](https://i.imgur.com/81VJFo5.jpg)
 
 
+
+
+
 This package requires a recent version of Pandoc (>= 2.2.3). If you use RStudio, you are recommended to install the [latest version](https://rstudio.com/products/rstudio/download/) (>= 1.2.1335), which has bundled Pandoc 2.x, otherwise you need to install Pandoc separately.
 
 

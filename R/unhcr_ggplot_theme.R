@@ -64,27 +64,17 @@ theme_foundation <- function(base_size=12, base_family="") {
 #'   } # if ("ggplot2" %in% (.packages())) end.
 #' library(ggplot2)
 #' library(tidyverse)
-#' # seminal bar chart
 #' update_geom_font_defaults()
 #'
-#' # seminal scatterplot
-#' ggplot(mtcars, aes(mpg, wt)) +
-#'   geom_point() +
-#'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-#'        title="Seminal ggplot2 scatterplot example",
-#'        subtitle="A plot that is only useful for demonstration purposes",
-#'        caption="Brought to you by the letter 'g'") +
-#'   unhcr_theme()
-#'
-#'
+#' # Bar chart
 #' count(mpg, class) %>%
 #'   ggplot(aes(class, n)) +
 #'   geom_col() +
 #'   geom_text(aes(label=n), nudge_y=3) +
 #'   labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-#'        title="Seminal ggplot2 bar chart example",
+#'        title="Bar chart example",
 #'        subtitle="A plot that is only useful for demonstration purposes",
-#'        caption="Brought to you by the letter 'g'") +
+#'        caption="Brought to you by ...") +
 #'   unhcr_theme(grid="Y") +
 #'   theme(axis.text.y=element_blank())
 #' }
@@ -93,33 +83,47 @@ theme_foundation <- function(base_size=12, base_family="") {
 #'
 #' @import ggplot2
 
-unhcr_theme <- function(base_family="Lato", base_size = 12,
-                        plot_title_family=base_family, plot_title_size = base_size*1.5,
-                        plot_title_face="bold", plot_title_margin = base_size*0.75,
-                        subtitle_family=base_family, subtitle_size = base_size*1.25,
-                        subtitle_face = "plain", subtitle_margin = base_size,
-                        strip_text_family = base_family, strip_text_size = base_size,
+unhcr_theme <- function(base_family="Lato",
+                        base_size = 12,
+                        plot_title_family=base_family,
+                        plot_title_size = base_size*1.5,
+                        plot_title_face="bold",
+                        plot_title_margin = base_size*0.75,
+                        subtitle_family=base_family,
+                        subtitle_size = base_size*1.25,
+                        subtitle_face = "plain",
+                        subtitle_margin = base_size,
+                        strip_text_family = base_family,
+                        strip_text_size = base_size,
                         strip_text_face = "plain",
-                        caption_family = base_family, caption_size = base_size*0.75,
-                        caption_face = "plain", caption_margin = base_size*0.75,
+                        caption_family = base_family,
+                        caption_size = base_size*0.75,
+                        caption_face = "plain",
+                        caption_margin = base_size*0.75,
                         axis_text_size = base_size,
-                        axis_title_family = subtitle_family, axis_title_size = base_size*0.75,
-                        axis_title_face = "plain", axis_title_just = "rt",
-                        legend_title_family = base_family, legend_title_size = base_size*0.85,
-                        legend_title_face = "plain", legend_title = FALSE,
+                        axis_title_family = subtitle_family,
+                        axis_title_size = base_size*0.75,
+                        axis_title_face = "plain",
+                        axis_title_just = "rt",
+                        legend_title_family = base_family,
+                        legend_title_size = base_size*0.85,
+                        legend_title_face = "plain",
+                        legend_title = FALSE,
                         plot_margin = margin(30, 30, 30, 30),
-                        grid_col = grey(.80, 1), grid = TRUE,
-                        axis_col = grey(.40, 1), axis = FALSE, ticks = FALSE) {
+                        grid_col = grey(.80, 1),
+                        grid = TRUE,
+                        axis_col = grey(.40, 1),
+                        axis = FALSE,
+                        ticks = FALSE) {
 
   ret <- theme_foundation(base_family=base_family, base_size=base_size)
+
+  ## legend ----
   ret <- ret + theme(legend.background=element_blank())
   ret <- ret + theme(legend.key=element_blank())
-  ret <- ret + theme(legend.position = "top")
+  ret <- ret + theme(legend.position = "bottom")
   ret <- ret + theme(legend.justification = 'right')
   ret <- ret + theme(legend.direction = "horizontal")
-  ret <- ret + theme(line = element_line(colour = grey(.80, 1)))
-  ret <- ret + theme(rect = element_rect(fill = "transparent", linetype = 0, colour = NA))
-  ret <- ret + theme(text = element_text(colour = grey(.15, 1)))
 
   if (inherits(legend_title, "character") | legend_title == TRUE) {
 
@@ -130,6 +134,12 @@ unhcr_theme <- function(base_family="Lato", base_size = 12,
     ret <- ret + theme(legend.title = element_blank())
   }
 
+  ## Line ----
+  ret <- ret + theme(line = element_line(colour = grey(.80, 1)))
+  ret <- ret + theme(rect = element_rect(fill = "transparent", linetype = 0, colour = NA))
+  ret <- ret + theme(text = element_text(colour = grey(.15, 1)))
+
+  ## grid ----
   if (inherits(grid, "character") | grid == TRUE) {
     ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.2))
     ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.2))
@@ -141,11 +151,12 @@ unhcr_theme <- function(base_family="Lato", base_size = 12,
       if (regexpr("x", grid)[1] < 0) ret <- ret + theme(panel.grid.minor.x=element_blank())
       if (regexpr("y", grid)[1] < 0) ret <- ret + theme(panel.grid.minor.y=element_blank())
     }
-
   } else {
     ret <- ret + theme(panel.grid=element_blank())
   }
+  ret <- ret + theme(panel.spacing=grid::unit(2, "lines"))
 
+  ## axis ----
   if (inherits(axis, "character") | axis == TRUE) {
     ret <- ret + theme(axis.line=element_line(color=grey(.40, 1), size=0.2))
     if (inherits(axis, "character")) {
@@ -182,29 +193,58 @@ unhcr_theme <- function(base_family="Lato", base_size = 12,
   xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
 
-  ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=0)))
-  ret <- ret + theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=0)))
-  ret <- ret + theme(axis.title=element_text(size=axis_title_size, family=axis_title_family,
+
+  ret <- ret + theme(axis.text.x=element_text(size=axis_text_size,
+                                              margin=margin(t=0)))
+
+  ret <- ret + theme(axis.text.y=element_text(size=axis_text_size,
+                                              margin=margin(r=0)))
+
+  ret <- ret + theme(axis.title=element_text(size=axis_title_size,
+                                             family=axis_title_family,
                                              color = grey(.40, 1)))
-  ret <- ret + theme(axis.title.x=element_text(hjust=xj, size=axis_title_size,
-                                               family=axis_title_family, face=axis_title_face))
-  ret <- ret + theme(axis.title.y=element_text(hjust=yj, size=axis_title_size,
-                                               family=axis_title_family, face=axis_title_face))
-  ret <- ret + theme(axis.title.y.right=element_text(hjust=yj, size=axis_title_size, angle=90,
-                                                     family=axis_title_family, face=axis_title_face))
-  ret <- ret + theme(strip.text=element_text(hjust=0, size=strip_text_size,
-                                             face=strip_text_face, family=strip_text_family))
-  ret <- ret + theme(panel.spacing=grid::unit(2, "lines"))
-  ret <- ret + theme(plot.title=element_text(hjust=0, size=plot_title_size,
+
+  ret <- ret + theme(axis.title.x=element_text(hjust=xj,
+                                               size=axis_title_size,
+                                               family=axis_title_family,
+                                               face=axis_title_face))
+
+  ret <- ret + theme(axis.title.y=element_text(hjust=yj,
+                                               size=axis_title_size,
+                                               family=axis_title_family,
+                                               face=axis_title_face))
+
+  ret <- ret + theme(axis.title.y.right=element_text(hjust=yj,
+                                                     size=axis_title_size,
+                                                     angle=90,
+                                                     family=axis_title_family,
+                                                     face=axis_title_face))
+
+  ## text ----
+  ret <- ret + theme(plot.title=element_text(hjust=0,
+                                             size=plot_title_size,
                                              margin=margin(b=plot_title_margin),
-                                             family=plot_title_family, face=plot_title_face))
-  ret <- ret + theme(plot.subtitle=element_text(hjust=0, size=subtitle_size,
+                                             family=plot_title_family,
+                                             face=plot_title_face))
+
+  ret <- ret + theme(plot.subtitle=element_text(hjust=0,
+                                                size=subtitle_size,
                                                 margin=margin(b=subtitle_margin),
-                                                family=subtitle_family, face=subtitle_face))
+                                                family=subtitle_family,
+                                                face=subtitle_face))
+
   ret <- ret + theme(plot.caption=element_text(hjust=0, size=caption_size,
                                                margin=margin(t=caption_margin),
-                                               family=caption_family, face=caption_face,
+                                               family=caption_family,
+                                               face=caption_face,
                                                color =  grey(.60, 1)))
+
+  ret <- ret + theme(strip.text=element_text(hjust=0,
+                                             size=strip_text_size,
+                                             face=strip_text_face,
+                                             family=strip_text_family))
+
+  ## position ----
   ret <- ret + theme(plot.title.position = "plot")
   ret <- ret + theme(plot.caption.position = "plot")
   ret <- ret + theme(plot.margin=plot_margin)
@@ -251,7 +291,9 @@ unhcr_discrete <- function() { manual_pal(as.vector(t(unhcr_pal_graphic))) }
 #' @description See [unhcr_discrete()].
 #' @aliases unhcr_scale_color_discrete
 #' @inheritDotParams ggplot2::discrete_scale -expand -position
-unhcr_scale_colour_discrete <- function(...) { discrete_scale("colour", "unhcr_pal_graphic", unhcr_discrete(), ...) }
+unhcr_scale_colour_discrete <- function(...) { discrete_scale("colour",
+                                                              "unhcr_pal_graphic",
+                                                              unhcr_discrete(), ...) }
 
 
 
@@ -263,7 +305,9 @@ unhcr_scale_colour_discrete <- function(...) { discrete_scale("colour", "unhcr_p
 #' @description See [unhcr_discrete()].
 #' @aliases unhcr_scale_colour_discrete
 #' @export unhcr_scale_fill_discrete
-unhcr_scale_fill_discrete <- function(...) { discrete_scale("fill", "unhcr_pal_graphic", unhcr_discrete(), ...) }
+unhcr_scale_fill_discrete <- function(...) { discrete_scale("fill",
+                                                            "unhcr_pal_graphic",
+                                                            unhcr_discrete(), ...) }
 
 
 ## ToDo: ------

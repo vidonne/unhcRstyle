@@ -84,40 +84,27 @@ to use in \bold{ggplot2} commands.
 }
 \examples{
 {
-
-if (!require(ggplot2)) {
-install.packages('ggplot2')   # installs ggplot2
-library('ggplot2')            # loads ggplot2
- }
- # Check if ggplot2 is loaded:
- if ("ggplot2" \%in\% (.packages())){
- message("Package 'ggplot2' is loaded.")
-  } # if ("ggplot2" \%in\% (.packages())) end.
-library(ggplot2)
-library(tidyverse)
-# seminal bar chart
-update_geom_font_defaults()
-
-# seminal scatterplot
-ggplot(mtcars, aes(mpg, wt)) +
-  geom_point() +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 scatterplot example",
-       subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") +
-  unhcr_theme()
-
-
-count(mpg, class) \%>\%
-  ggplot(aes(class, n)) +
-  geom_col() +
-  geom_text(aes(label=n), nudge_y=3) +
-  labs(x="Fuel efficiency (mpg)", y="Weight (tons)",
-       title="Seminal ggplot2 bar chart example",
-       subtitle="A plot that is only useful for demonstration purposes",
-       caption="Brought to you by the letter 'g'") +
-  unhcr_theme(grid="Y") +
-  theme(axis.text.y=element_blank())
+    
+    if (!require(ggplot2)) {
+        install.packages("ggplot2")  # installs ggplot2
+        library("ggplot2")  # loads ggplot2
+    }
+    # Check if ggplot2 is loaded:
+    if ("ggplot2" \%in\% (.packages())) 
+        {
+            message("Package 'ggplot2' is loaded.")
+        }  # if ('ggplot2' \%in\% (.packages())) end.
+    library(ggplot2)
+    library(tidyverse)
+    update_geom_font_defaults()
+    
+    # Bar chart
+    count(mpg, class) \%>\% ggplot(aes(class, n)) + geom_col() + 
+        geom_text(aes(label = n), nudge_y = 3) + labs(x = "Fuel efficiency (mpg)", 
+        y = "Weight (tons)", title = "Bar chart example", 
+        subtitle = "A plot that is only useful for demonstration purposes", 
+        caption = "Brought to you by ...") + unhcr_theme(grid = "Y") + 
+        theme(axis.text.y = element_blank())
 }
 
 }
