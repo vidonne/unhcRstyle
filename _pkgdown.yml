@@ -21,13 +21,15 @@ navbar:
 reference:
   - title: Rmd template
     contents:
-      - unhcr_paged
-      - unhcr_slide
-      - unhcr_html
-      - unhcr_word
-      - unhcr_ppt
+      - unhcr_templ_paged
+      - unhcr_templ_slide
+      - unhcr_templ_html
+      - unhcr_templ_word
+      - unhcr_templ_ppt
   - title: Gggplot2 themes
     contents:
+      - unhcr_theme
+      - theme_foundation
       - unhcr_style_bar
       - unhcr_style_bar_big
       - unhcr_style_histo
@@ -38,21 +40,52 @@ reference:
       - unhcr_style_scatter_big
   - title: Color palettes
     contents:
-      - get_unhcr_palettes
+      - unhcr_pal
+      - unhcr_pal_graphic
+      - unhcr_all_pal
+      - unhcr_pal_primary
+      - unhcr_all_pal_graphic
+      - unhcr_pal_blue
+      - unhcr_pal_grey
+      - unhcr_pal_darkblue
+      - unhcr_pal_green
+      - unhcr_pal_red
+      - unhcr_pal_yellow
+      - unhcr_black
+      - unhcr_blue
+      - unhcr_darkblue
+      - unhcr_discrete
+      - unhcr_green
+      - unhcr_grey
+      - unhcr_red
+      - unhcr_white
+      - unhcr_yellow
       - test_pal
       - test_pal_cont
       - test_pal_div
       - test_pal_op
-  - title: Function to apply the palette
-    contents:
-      - scale_color_discrete_unhcr
-      - scale_(color/colour/fill)_discrete_unhcrDiscrete
-      - scale_(color/colour/fill)_opinionated_unhcrDiscrete
-      - scale_(color/colour/fill)_diverging_unhcrContinuous
-      - scale_(color/colour/fill)_continuous_unhcrContinuous
-      - unhcr_repo
   - title: Other utilities function
     contents:
       - format_si
       - left_align
+      - plot_col
+      - plot_shape
+      - scale_custom
+      - scale_x_comma
+      - scale_x_percent
+      - scale_y_comma
+      - update_geom_font_defaults
+  - title: Palette utilities function
+    contents:
+      - unhcr_scale_colour_discrete
+      - get_unhcr_palettes
+      - col2hex
+      - getpal_key
+      - isCol
+      - isHexCol
+      - usecol
+      - newpal
+      - parse_pal
+      - rgb2hex
+      - seecol
       - unhcRstyle

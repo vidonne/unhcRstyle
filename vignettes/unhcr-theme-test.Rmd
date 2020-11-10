@@ -1,8 +1,8 @@
 ---
-title: "Demonstrating themes in GGplot2"
+title: "How to use UNHCR themes?"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Demonstrating themes in GGplot2}
+  %\VignetteIndexEntry{How to use UNHCR themes?}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,51 +10,108 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  echo = TRUE,
   comment = "#>"
 )
 ```
 
-## Set Up
+## Set Up: load packages
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(unhcRstyle)
 library(ggplot2)
+library(tidyverse)
+library(unhcrdatapackage)
+update_geom_font_defaults()
+
+
 ```
 
+
+## Use Theme on a bar plot
+
+To understand this theme, let's first consider a basic ggplot.
+
+```{r}
+# make fake data for plots ----
+bar <- count(mpg, class)
+
+## chart
+g_bars <- ggplot(bar, aes(class, n)) + 
+          geom_col( )  +
+          geom_text(aes(label=n), nudge_y = 3) +
+            labs(title="Title: Main Message supported by the chart (less than 80 char)",
+                 subtitle="Subtitle: Interpretation on what is displayed",
+                 x="Title for X axis - limit to less than 40 char", 
+                 y="Title for X axis",
+                 caption="Source of data / Reference / Disclaimer")
+g_bars
+```
+
+
+We can now:
+ * reorder x based on frequency to make the chart more legible
+ * flip the chart again to make the chart more legiblel
+ * include the standard `unhcr_blue`
+ * apply the UNHCR them with `unhcr_theme()` 
+
+```{r}
+g_bars <- ggplot(bar, aes(x= reorder(class, n), y = n)) +
+          geom_col( fill = unhcr_blue)  +
+          geom_text(aes(label=n), nudge_y = 3) +
+          coord_flip() +
+            labs(title="Title: Main Message supported by the chart (less than 80 char)",
+                 subtitle="Subtitle: Interpretation on what is displayed",
+                 x="Title for X axis - limit to less than 40 char", 
+                 y="Title for X axis",
+                 caption="Source of data / Reference / Disclaimer") +
+          unhcr_theme(grid="Y")
+
+g_bars
+```
+
+The main title are directly aligned, the correct font is used.
+
+
+## Use Theme on a scatter plot
+
+To understand this theme, let's first consider a basic ggplot.
 
 ```{r}
 # make fake data for plots ----
 points <- data.frame(x = 1:10, y = 1:10)
-g_points <- ggplot(points, aes(x, y, col = factor(x))) + geom_point(size = 5)
-```
 
-## Motivation for this Theme
-
-ADD SOMETHING HERE!
-
-## Plot Theme
-
-To understand this theme, first consider this basic ggplot.
-
-```{r}
+## chart
+g_points <- ggplot(points, aes(x, y, col = factor(x))) + 
+            geom_point(size = 5) +
+            labs(x="Title for X axis", 
+                 y="Title for X axis",
+                 title="Main Message supported by the chart (less than 80 char)",
+                 subtitle="Interpretation on what is displayed",
+                 caption="Source of data / Reference")
 g_points
 ```
 
 
-Here is what my theme looks like.
+We can now apply the UNHCR them with `unhcr_theme()`
 
 ```{r}
-g_points + 
-  labs(title = "My fancy plot") +
-  unhcr_style_scatter()
+g_points <- g_points + 
+            unhcr_theme()
+
+g_points
 ```
 
-It also pairs nicely with this palette.
+The main title are directly aligned, the correct font is used.
+
+next step is to apply one UNHCR color palette.
 
 ```{r}
-g_points + 
-  scale_color_discrete_unhcr(palette = "test", extend = TRUE) + 
-  labs(title = "My fancy plot") +
-  unhcr_style_scatter()
+g_points <- g_points + 
+  scale_color_discrete_unhcr(palette = "test", extend = TRUE) 
+  #scale_color_discrete_unhcr(palette = "unhcr", extend = TRUE) 
+
+
+g_points
 ```
 

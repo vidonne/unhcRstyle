@@ -3,7 +3,7 @@
 \docType{data}
 \name{test_pal_op}
 \alias{test_pal_op}
-\title{Define opinionated discrete palette (good, neutral, bad)}
+\title{Define opinionated discrete palette}
 \format{
 An object of class \code{character} of length 3.
 }
@@ -11,6 +11,11 @@ An object of class \code{character} of length 3.
 test_pal_op
 }
 \description{
-Define opinionated discrete palette (good, neutral, bad)
+(good, neutral, bad)
+}
+\examples{
+{
+    seecol(test_pal_op)  # view color and details
+}
 }
 \keyword{datasets}
