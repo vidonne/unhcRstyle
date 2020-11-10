@@ -13,5 +13,5 @@ See the README on
 \href{https://github.com/unhcr/unhcRstyle}{GitHub}
 }
 \references{
-https://github.com/emilyriederer/Rtistic
+https://unhcr-web.github.io/unhcRstyle/docs/
 }

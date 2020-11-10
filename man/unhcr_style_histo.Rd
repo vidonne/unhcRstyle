@@ -13,7 +13,15 @@ Return UNHCR Style
 Return ggplot2 styling for histogram
 }
 \examples{
-unhcr_style_histo()
+{
+    library(ggplot2)
+    extrafont::loadfonts(quiet = TRUE)
+    data <- data.frame(x = rnorm(100))
+    # Basic plot with title
+    ggplot(data = data, aes(x = x)) + geom_histogram(color = "white", fill = "#2a87c8", 
+        alpha = 0.7) + ggtitle("A blue Histogram") + unhcr_style_histo()
+}
+
 
 }
 \seealso{

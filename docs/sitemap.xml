@@ -4,16 +4,55 @@
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//index.html</loc>
   </url>
   <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/col2hex.html</loc>
+  </url>
+  <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/format_si.html</loc>
   </url>
   <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/get_unhcr_palettes.html</loc>
   </url>
   <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/getpal_key.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/isCol.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/isHexCol.html</loc>
+  </url>
+  <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/left_align.html</loc>
   </url>
   <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/newpal.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/parse_pal.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/plot_col.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/plot_shape.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/rgb2hex.html</loc>
+  </url>
+  <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/scale_custom.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/scale_x_comma.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/scale_x_percent.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/scale_y_comma.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/seecol.html</loc>
   </url>
   <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/test_pal.html</loc>
@@ -28,19 +67,70 @@
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/test_pal_op.html</loc>
   </url>
   <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/theme_foundation.html</loc>
+  </url>
+  <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcRstyle.html</loc>
   </url>
   <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_html.html</loc>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_all_pal.html</loc>
   </url>
   <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_paged.html</loc>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_all_pal_graphic.html</loc>
   </url>
   <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_ppt.html</loc>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_black.html</loc>
   </url>
   <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_slide.html</loc>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_blue.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_darkblue.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_discrete.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_green.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_grey.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_blue.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_darkblue.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_graphic.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_green.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_grey.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_primary.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_red.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_pal_yellow.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_red.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_scale_colour_discrete.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_scale_fill_discrete.html</loc>
   </url>
   <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_style_bar.html</loc>
@@ -67,7 +157,34 @@
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_style_scatter_big.html</loc>
   </url>
   <url>
-    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_word.html</loc>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_html.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_paged.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_ppt.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_slide.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_templ_word.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_theme.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_white.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/unhcr_yellow.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/update_geom_font_defaults.html</loc>
+  </url>
+  <url>
+    <loc>https://unhcr-web.github.io/unhcRstyle/docs//reference/usecol.html</loc>
   </url>
   <url>
     <loc>https://unhcr-web.github.io/unhcRstyle/docs//articles/unhcr-palette-test.html</loc>

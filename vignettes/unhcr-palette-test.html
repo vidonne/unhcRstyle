@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>Demonstrating UNHCR Palette</title>
+
+<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
+// v0.0.1
+// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
+
+document.addEventListener('DOMContentLoaded', function() {
+  const codeList = document.getElementsByClassName("sourceCode");
+  for (var i = 0; i < codeList.length; i++) {
+    var linkList = codeList[i].getElementsByTagName('a');
+    for (var j = 0; j < linkList.length; j++) {
+      if (linkList[j].innerHTML === "") {
+        linkList[j].setAttribute('aria-hidden', 'true');
+      }
+    }
+  }
+});
+</script>
+<style type="text/css">
+a.anchor-section {margin-left: 10px; visibility: hidden; color: inherit;}
+a.anchor-section::before {content: '#';}
+.hasAnchor:hover a.anchor-section {visibility: visible;}
+</style>
+<script>// Anchor sections v1.0 written by Atsushi Yasumoto on Oct 3rd, 2020.
+document.addEventListener('DOMContentLoaded', function() {
+  // Do nothing if AnchorJS is used
+  if (typeof window.anchors === 'object' && anchors.hasOwnProperty('hasAnchorJSLink')) {
+    return;
+  }
+
+  const h = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+  // Do nothing if sections are already anchored
+  if (Array.from(h).some(x => x.classList.contains('hasAnchor'))) {
+    return null;
+  }
+
+  // Use section id when pandoc runs with --section-divs
+  const section_id = function(x) {
+    return ((x.classList.contains('section') || (x.tagName === 'SECTION'))
+            ? x.id : '');
+  };
+
+  // Add anchors
+  h.forEach(function(x) {
+    const id = x.id || section_id(x.parentElement);
+    if (id === '') {
+      return null;
+    }
+    let anchor = document.createElement('a');
+    anchor.href = '#' + id;
+    anchor.classList = ['anchor-section'];
+    x.classList.add('hasAnchor');
+    x.appendChild(anchor);
+  });
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Demonstrating UNHCR Palette</h1>
+
+
+
+<div id="set-up-load-packages" class="section level2">
+<h2>Set Up: load packages</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">library</span>(unhcRstyle)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">library</span>(scales)</span></code></pre></div>
+</div>
+<div id="key-colors" class="section level2">
+<h2>Key Colors</h2>
+<p>The colors in the discrete palette are:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>scales<span class="op">::</span><span class="kw">show_col</span>(test_pal)</span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAABAlBMVEUAAAAAAAgAAAoAAA4AABAAABMAACAADhcAGB0AHRQAJgAAJhMAJi0ANBgANQAARAAARBMARDkAXxMAX0QAYAAAeCAAeFAAkS0AkVAAqDkAqEQAqFAzAAAzABAzDhczIiI4AAA4AAg4HQg4HRQ4SR05AAA5NQA5hgBaAABaAApaABBaKyhiAABiAA5iXSJmAABmqgB/DgB/Dgp/MyiKHQCKHQiKcCKPNQCPzgCgGACgPB2gPCivNACvgiK1YAC17wDBIgrBPCjSSQjSgiLbhgDb7wDhKxDhKx3hMxfhPB3hPCLhPCn1XQ71cBT1ghj1gh31giL+qgD+zgD+7wD+7wH///+XdngSAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAGxElEQVR4nO3c/VcUVRyA8TEN8S0SQ9SttNK0LMU0ykTF1UgEFZT+/3+l+zJ3ZmCXHmR3jM55nnMGLrPrOfrx3u/AL1R/279W/dd/gaOeQJBAkECQQJBAkECQQJBAUAeosqbxQIMjULVzFBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCDo80JUzlwaXZ8Jioao+vTToLgaDuepCXsxXVXUxfL6cfpPK+d3vmhTo/W+/77y/+3TnSf2LWpaa1Wd/jlsu7exsh0+/5z/97sbTXoEWz+ZrIfxz49Uuwv1PP5/JPvFeFFosKJ13TQz07vs/0/UkIOTa1fjldtDZzkLv71b9Ai2cT9eV03GvzHUW0WVmMe2bK6fP1/cWMtiud00MtP1Fvg4M9P63m/HLL3byVuoXaP5CurLE/Ey7SC6ZpgWar0k675oc6MXNfB0Y6N2NpfjHgsx2dXO7T6DL5fcznc1nJ2yQZpGP0Xz6sjlic2fCmy8Muu+aECgckTJkPgAonq5aplegdkbneRI+NougcTYSpjFdj+TLVbg1mLsw6LxrQqB2Rnd3UI12c/eyvJ7HTz2Eegbqzug9QIvJZm6m/rBYnmhx40wTqMzoYrG07w4qr39MoHpGD8Ycsfn6/+7i3okTvpzeEWtn9IfMoI91xDozaGRI58kc3nJ+734JOtMb0oebQWVI9w0UDs/FNIbGPOaLx3zhWCh6CzNTfcw/WUpj6HCP+b6B4nxO30ePfqMYR3Qszp5mBiWSMKSn+I1inM9pRh/uG8WegcqMHqSRk//BeZE3SyzqzOWne15c3PX2SYGaGT3mKRYMusvW6kX7o0bPR6z//u8/rPaeQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkEDQkQaypvFAW0egauMoJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBA0AdDbX5e33vz8eGul/j0yd7be/BQ/nwuvDdPX4T0PwuL62MU0gF79cn9j/cdHGw/rv8LJZ/Huy68exU+rVfXJ/fy2e+W1tLq6+9XegF5/9zxdK6eelzvfLOfF8Njy1mYQevsgLIaBbHQxFaCXXz9L18Msk1u/dSICrYaPa8lgLZE8DOtX98KH1Wo2f/Xyy9u9Am2ey1cLtHn8cfr89kEEWDm39fpa3EbD449HF1MBWpvNVxdoraoi0Pqtq3HDhBdrh1f3Tj7Ly0CXXt1Y7bpOH2h4PV8t0LDeGA1Q7XZseb/FhECrV/PVAQrbZS3toIwy2zL8Ve6GfVVvrQMcssMC5XETOvW8BVr5tp4v5YjVt8t+GV1MArR+q5k8u47YRgu0mo7V7J4/+PDEo3L2bvcG1M7odge9+SmuVqLQZlU1m2SzzOTRxURA7YxuhvTVXUBr6UY+TV2/cLc+a70ClRldnmJlv8RBFHfI62vXa41zW/ssJgUqM3pjvx0U585eoLU4o+sh3StQmdGdGZThrt3pTuLD7p+DAJUZvS9QnDJ7jthavc3Cpjvxxw8feQZloG+W8wxOH4dFY3QxKdABZlA6SmVIp4mzWnX2U/0NUy9AYePcSWOos4Pyxtksz/J41obl5I0uJgYKu+B2GkNjd1CeMnHZeczvmTq9PubjfE4zunPE0oM9Dukyg8ocGrOYAlCcz2lGjz1i8d6re3G/pFOVvkd8+WW9f9ZvzR7sKX94oGZGd2fQShnWK/l5P8xn4Njy6GIKQM2Mbp5i+V9cH7F483bNUf+osdq8Ld7q+0eNvvvf/7DadwJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQUcayJrGAtm4BIIEggSCBIIEggSCBIIEggSC/gGa9PQ6xuB6JwAAAABJRU5ErkJggg==" /><!-- --></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>scales<span class="op">::</span><span class="kw">show_col</span>(unhcr_pal)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a></span>
+<span id="cb3-20"><a href="#cb3-20"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a></span>
+<span id="cb3-23"><a href="#cb3-23"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a></span>
+<span id="cb3-26"><a href="#cb3-26"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a></span>
+<span id="cb3-29"><a href="#cb3-29"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-30"><a href="#cb3-30"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-31"><a href="#cb3-31"></a></span>
+<span id="cb3-32"><a href="#cb3-32"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-33"><a href="#cb3-33"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span>
+<span id="cb3-34"><a href="#cb3-34"></a></span>
+<span id="cb3-35"><a href="#cb3-35"></a><span class="co">#&gt; Warning in rect(col(colours) - 1, -row(colours) + 1, col(colours), -</span></span>
+<span id="cb3-36"><a href="#cb3-36"></a><span class="co">#&gt; row(colours), : supplied color is neither numeric nor character</span></span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAAAulBMVEUAAAAAACEAADoAAEkAAGYAFwAAMlEAOjoAOmYAOnwAOpAAWGYAZrYXAAAXKJAge9sxOpA6AAA6ADo6AGY6OgA6OpA6Zp06kJw6kNtJAABYAGZmAABmADpmAFhmAGZmOgBmZjpmtttmtv97Ojp82/+QOgCQOjqQZgCQ27aQ2/+cZgC2WAC2ZgC225C2/7a2///bkDrbtmbb25Db/9vb////tkn/tlj/tmb/trb/22b/25D//7b//9v///9DTbaCAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAIhElEQVR4nO2ci3LbVBRFL8G8THgkUDAEaGtIacCt1TZgcKL//y3uW1eK5C0/0mTw2jN1Th1l6WpZOlJm2mNqsjHmoRfw2IMgEQSJIEgEQSIIEkGQCIJEECRSCDIkp1/QQXU/GOHACAQJBIIEAkECgSCBQJBAIEggECQQCBIIBAkEggQCQQKBIIFAkEAgSCAQJBAIEggECQSCBAJBAoEggUCQQCBIIBAkEAgSCAQJBIIEAkECcWBBty+u6ptflnVdGXNy5d4qCzO3Xxfx3wdMr+1fbi9TFTdsCOszY07dN3LhfnaWdpXKiHPkVSQ/H15Es8O08by9IAu0X+9P0PrJde3+VJNlvXJragr7snLHsYgLqf0huaNcuO+7l/XZPBNWdrObCysmF1bV+TOLq1tlwK3PokK7aUZEZN0U5Q7DxqftBbkt7lXQyh3Rqd3xzH1YReH+2LW01xMWbb83vfYb1tU0EW4v/d8ny1z411fhJ4oy4lbpmKtJaxEWmdnX5Q7jxsuOIOv3XgVVdilVvAyCk3qDoCqW/8SzzL4mwvo8HnAuPCcxmzLi0jfWZ7OESMirXJQ7jBvXHUHV9PdBQXvH2i+v5ip/qAOXWDZYpzPgr/QPmKZvJq8tza5/lYp4iAHalIuidbgvH/6QEcGLma9SUe7Qb+zPy1KQ/TiGe9DJvoIsLbVH3wTDmZSKVWyUqSfO4jUQV+ZPfttMI6EydvHugHIRjiT+TFMuyqvFv5cQCTnPRbnDuHFrQf7CHhY0PYCg2B598pXuC/dp+VO6+cBa6w2N1CRCOD1Wk2Uu0gUxWdZl2RbkTpa8iIic56IjKPatzjU/LKh9+u0mKLTH9gJ8ET9FexT9l5j/ICevf0qEcLz2p3LhnxPiHb0o25eYP7q8iIC8ykXnEktXZV6Q73fDgvZOpwele4YvmkbZ06R9b3L594umBy3DilepiEfn7sxF2W7S9hS5s4hv0oOBLVo7TOdTs6DsvV/QfH9Fdr/uQS89dEyWd4uB23xc4TQRbi7i9rlI52OVbkuh8bdu8x6YEAl53RStHabPr/0ctOEMer2nHXtUZhl7tNuLf4Jpirs9KD633V7agwvPhCcvM6FKP5iKRT4vZ0WZHxTzfS4vIiKvmqLcYdMBRgt6u7egtck9ehEf/9vFrG5uGn55/oLwC3SVbVUNYWWa258t8vXqALmcLItfNULnahABWRblDmOb6yzovn/VeASEx/3L6iMgIOj9IhAkEAgSCAQJBIIEAkECgSCBQJBAIEggECQQCBIIBAkEggQCQQKBIIFAkEAgSCAQJBAIEggECQSCBAJBAoEggUCQQJQlyVGuDmD+wQhcYu8XgSCBQJBAIEggECQQCBIIBAkEggQCQQKBIIFAkEAgSCAQJBAIEggECQSCBAJBAoEggUCQQCBIIBAkEAgSCAQJBIIEAkECgSCBQJBANOWtSZNbirlZRV1Osqo6k1zmYbtZGrzSvL9tZYYXsEX92a+bJoXJol9Q/g/55RircoZWMXMjzd3K7/lhBlWe3dJsu0XlJ2uZ4QWMre0h/fnBbwNDusYUA4JWJgxNKedblHVnrI2fJpLfSyN64uCVnQT5yVpmeAFja4v4+yOPuzuka0wxJKgyYbpWOcaqrDsjLtqCkuOvAmMnQX7nZngBY2uH+G7ZP6RrTNErqBkq866YsdOat9ORUXUuu9Z0nB0EGbWA0bXJ67g7pGtM0SvIsl8Y39fKKU3tEVFxt2ngyJ35aO7N2Bt3OYPe+QZvBhcwujb17eCQrjHFgKD1E+P72rCg7iXm+lK6CQU/n6c+37y/ZfXlQQStB4d0jSr6Ba1Oje+vQ2dvV1B3mpS7f6Q+v9MZ9OY0LGKny6qsw3H0D+kaV2zsQdflGKuy7gpyp2R56zffH6YHDS5gbG02DekaV/SdQYu5CYOt9G2+b9xWFa6TOBxrlzPoDz9Z6yC3+cXzS/eomJZWDukaV/QIsj3N5AmIxRirpi7OltYAruhsVocWmyd0bSno0x/9ZC0zvICxtbn5+enJy/4hXWOKfkG2p5k0AbEYY1XU5SSrNHcrH2CaH3cVGDsI+vhr31jN8AK2qoeGdI0p+GV1GwSCBAJBAoEggUCQQCBIIBAkEAgSCAQJBIIEAkECgSCBQJBAIEggECQQCBIIBAkEggQCQQKBIIFAkEAgSCAQJBAIEggECURZkhzl6gDmH4zAJfZ+EQgSCAQJBIIEAkECgSCBQJBAIEggECQQCBIIBAkEggQCQQKBIIFAkEAgSCAQJBAIEggECQSCBAJBAoEggUCQQCBIIBAkEAgSCAQJxNEIur2c+KkA8X+iL8ysd7M7iCMSZMI0Dy9off5sshyFOCJBn5w3UzOqyasw0EIijkjQaZUH09i/tCbbbEAU5WT/te2PuE9BNxfzKMiN6KhOrno37CCO6Qzyo128IPfSmh41jDgqQW5izcIP0fHzxYbb9LEKcjOPnKA0q2awTR9pD7Kvi5kVFPuzHxgkEcd1Btnnn2+n13GK0oY2fbyC7BN0M2EttCKBODZBNxfTt/kRcbBNH6OgXREIEggECQSCBAJBAoEggUCQQCBIIBAkEAgSCAQJBIIEAkECgSCBQJBAIEggECQQCBIIBAkEggQCQQKBIIFAkEAgSCAQJBAIEoiyJDkH1f3/DoJEECSCIBEEiSBIBEEiCBJBkAiCRBAkgiARBIkgSARBIggSQZAIgkQQJIIgEQSJIEgEQSIIEkGQCIJEECSCIBEEiSBIBEEiCBJBkAiCRBAkgiARBIkgSARBIggSQZAIgkQQJIIgEQSJIEgEQSIIEkGQCIJEECSCIBEEiSBIBEEiCBJBkAiCRBAkgiARBIkgSARBIggSQZAIgkQQJIIgEQSJIEgEQSIIEkGQCIJEECSCIBEEifwHWX3aOOxHJwEAAAAASUVORK5CYII=" /><!-- --></p>
+<p>The colors used to define the continuous palette spectrum are:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>scales<span class="op">::</span><span class="kw">show_col</span>(test_pal_cont)</span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAAAbFBMVEUAAAAAABMAACAAJgAAJhMAJi0ANQAARAAARBMARDkAXxMAX0QAYAAAeCAAeFAAkS0AkVAAqDkAqEQAqFA5AAA5NQA5hgBmAABmqgCPNQCPzgC1YAC17wDbhgDb7wD+qgD+zgD+7wD+7wH///+XU9Y+AAAACXBIWXMAAA7DAAAOwwHHb6hkAAAETElEQVR4nO3ca1PaQBhA4YhaCgiIsYhXBP//f+xuNjc07VEgls6cMxNdMM7oY/YNfiF7s7+W/esf4NQTCBIIEggSCBIIEggSCBIIagFlVtcNlJ9A2fYUEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBIIEggSCBII2h/o5uI6XwzCYpplZ9d5e5Hnw2ySFuMsy2bh86J4J5XR7lmHAm3uH7abu6ftY/lGLat69eOla7nabtfh00P67tfbp16B5pfpmIZfNx7NIjx/9nOQfOJzUWheobTOOhjo9ddLcTwGhFSz6l6ug846CW3usn6BpqPiuDmP18qwtYgug3lx3dycj8rnpgls56yDgdZX6fg00OZ+GR9ebdOl1C/QeFIcSWI8aBaFS6JpgMYlSeusw4Gel+n4NNDr7Sp+W5BZZ8t1n0CL6v2ZLtPeCRdIvUjbaFw8rLfY8CKcPMnbZx0IFLZINWS+ABR3VynTK1Azo9M8CR/rRdC4jITFmC5H8iILT+XDSd4660CgZka3r6ASbbm7rL6exk85hHoGas/od0DzwmY4KD/MqztavHCOCVTN6Mpi9ccrqPr6dwKVMzrv2GLj8m83ez9xwsPjbbFmRn9lBn3XFmvNoA9DOk3mcMro/fUSdI43pPebQdWQ7hsobJ5ZMYY6bvOVx7jimFZ608FRb/OPq2IM7Xeb7xsozufidfTHF4pxRMfi7KlnUEEShvQRXyjG+VzM6P1eKPYMVM3ovBg56RdOi3SxxKLOMN3d02K2c/qhQPWM7riLBYP2srF6bv7V6HmL9d///s9q7wkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBJ00kNV1AllXAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQQJBAkECQb8Bua4dRKcLWb4AAAAASUVORK5CYII=" /><!-- --></p>
+<p>The colors used in the diverging palette are:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>scales<span class="op">::</span><span class="kw">show_col</span>(test_pal_div)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="discrete-palettes" class="section level2">
+<h2>Discrete Palettes</h2>
+<p>Consider the following plots:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># make fake data for plots ----</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>points &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># make plots for themes ----</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>g_points &lt;-<span class="st"> </span><span class="kw">ggplot</span>(points, <span class="kw">aes</span>(x, y, <span class="dt">col =</span> <span class="kw">factor</span>(x))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="st">            </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">5</span>) <span class="op">+</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="st">            </span><span class="kw">unhcr_theme</span>()</span>
+<span id="cb6-8"><a href="#cb6-8"></a>g_points</span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family not</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; found in Windows font database</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="co">#&gt; Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family not</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="co">#&gt; found in Windows font database</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co">#&gt; Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family not</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="co">#&gt; found in Windows font database</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb6-19"><a href="#cb6-19"></a></span>
+<span id="cb6-20"><a href="#cb6-20"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-21"><a href="#cb6-21"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb6-22"><a href="#cb6-22"></a></span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a></span>
+<span id="cb6-26"><a href="#cb6-26"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-27"><a href="#cb6-27"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb6-28"><a href="#cb6-28"></a></span>
+<span id="cb6-29"><a href="#cb6-29"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-30"><a href="#cb6-30"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb6-31"><a href="#cb6-31"></a></span>
+<span id="cb6-32"><a href="#cb6-32"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-33"><a href="#cb6-33"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb6-34"><a href="#cb6-34"></a></span>
+<span id="cb6-35"><a href="#cb6-35"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-36"><a href="#cb6-36"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb6-37"><a href="#cb6-37"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb6-38"><a href="#cb6-38"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb6-39"><a href="#cb6-39"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb6-40"><a href="#cb6-40"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASAAAAEgCAMAAAAjXV6yAAAA2FBMVEUAsPYAv30Av8QmJiYmJlEmJncmUVEmUZwmd745tgBRJiZRJlFRJndRUSZRUVFRUZxRd3dRnL5RnN9mZmZmZoFmgbZmnc93JiZ3JlF3Jnd3UZx3vv+BZmaBZoGBgbaBtueVkP+cUSacUVGcUXec3/+dZmadZp2dnZ2dz/+jpQC2gWa2gYG25/++dya+nFG+35y+///MzMzPnWbP/8/P///YkADfnFHfvr7f///na/PntoHn/+fn///4dm3/Yrz/vnf/z53/35z/57b//77//8///9///+f///+vetgNAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAKO0lEQVR4nO2da2PbNBiF02SwZRu3lq3AgKUwBoUFGKxhAZqsa4v//z8isuPGurzvkeNLnPg8XxbbsuY9k3W1pEFCVAa7foCuQ0EACgJQEICCABQEoCAABQEoCEBBAAoCUBCAggAUBKAgAAUBKAhAQQAKAlAQgIIAFASgIAAFASgIQEEACgJQEICCABQEoCAABQEoCEBBAAoCUBCAggAUBKgi6Orx7+aP5Wh070V+zjq443Xg7vbPLTYEwgqUEHTzw1Pr+Pr0AyNouRKyzKVYB9KD7ujcYrGNoVIp6N3Jyeev8oNVWjGCbs+OVwfTB+k560B60F2da0HQiv9+Pjn5yfxYjo6XRtDVw2ero1mamOwD6UF3dG6x2MpQKUHvvzYp6Oblm+wwE/ToRf7TOSjx8G2ca17QzQ9P/rVOpCKyHGed71gHr7tFGynIAQgq0I8U5LEPr9jckP7emaAuZ9LzHHPQTilWZNn1Yn4+LxrakaAOVxTnc9FQ4H6B6oKSWda6uD17sDlw6IagZAs/LTVWdyJoPvcMJWX19E5Q+FYNCgJQEICCAA0K2kmLa2JY/7b8uAE7IKhAWylokpOeCSWgLqWgAi0JmkxEQ+qtGockaDIRDem3ahy2oGJrXrlV44AETSaeoUA4CuqaoOUo41l6dH1qfu+mu6OjglKuT9dOsi5Fj94LuutD9HtbU5oTNDBk5zos6Orh8frXzHu7UpoSNMhJpFIsKjqNWgRN79LN9ONVFrS21Xy7YrDhrpmRg+5tU9D16fHdr/tvV5aO3RDNpKBBkVBNuispyO2EbmvYxxPktMU6I2hqkk2BbPCnSCOCBjZZuKKergjavGFr/LK+PUHw3h0IKiSY7GdLr9jeCCpmQemYYUuZ9N4IWtcSs3Gx6V2rAz1VfwRFUJ+goUEsxSLiO2xBw5z0iILcc8OhaCg6vkMWNByKhuLj65Cg2ptelqBic2ybyDogqEAtKWg49JNQ+fg6lIIKUBCAggAUBNhe0JEh+0lB/rmjnPRI9dNLQUdHlqE9FWQPhdU5X+zoSDa0TXxiMI3qgqzusVo/A/YEJYqf7goqdo/V+iH50ZFvyGrNb/V3tC+oOBRW61SEoKAK8cnBNKoLKg6FWZNZqja9HEFVo3NoTZA1FFbrdKhDSUEp60RDQRLrkY3q88XGhvWR6GcfBWVlfdVMepyTHh2GIGsorGIxPx6LhraKrxOC7KGwShXF8Vg0tFV8HRGUD4VVny/mC7Ja86Xj64qgCKIefjwOGaqpw18NpkFBAAoCUBBg1+Ni54bspyOo5raXSwcEFZD+d89z0jPBBHTAKaiA8PDn55YhCnLOnZ/LhtC9W5/ba0FJwE+PBZ2fe4bs1rxy7/bn9l1Q5L3bn6MgcK59Qbdnmz7pUvPFeiLo9mzVep+Ntpgv1hNBdicinC92YVif80uxQxSUkXeSgfliFzlJ3wTlM8b0+WIXGzYNsYyGW14+7QparqXo88UuigTaYoebgpZ2uSUN+/iC1oqccKF7azu3C0HLkZ1khPliFzYtyOiIoNkobr5YXwXNCrN71PliPRW0mRJu0OaL9VTQLFuZ4t6L8HyxS0OvBalc5qRHoVLMpm+CLi8tQxTkcHkpG2pFxt4JctpiPv0SdGlTaI613vAK0D1B7mWmIAoCUBCAghCqHwqiIIzmZ1/gBmwACgJQEICCABQEaFtQzKcO/qXwVOEkcqndErtV+rQsKOpTB++SMAMkBy21W2K3Sp+WBUV96uBekuYQ5YCldsvsVumzkzwIfOrgXpJmod1dVpfaLbVbpc9OBIU+dXCDSFOF5djk+OK30vPZhSD0qYN7SZoJmwdFS+2W2IzRZweC4KcO7iX9X4OX2t0zQfhTB/eS/j7gpXb36xWL+NTBvaTmqBFL7ZbYrdKnbUExnzq4l9QyOWKp3RK7Vfq0Xg+K+NTBu6TV6iKW2i2xW6VPy4LApw4FIqYKZzHipXZL7Fbpw8YqgIIAFASgIAAFASgIQEEACgJQEICCAH0U9Mfz5O+nsYH7KOjm5Z8v38QG7qOg5O+T59Fheyno/TevosP2UtAfP0ZnQb0U9P7bf36JTkI9FPTfzz8l7578Gxm6h4LKQUEACgJQEICCABQEoCAABQEoCEBBAAoCUBCAggAUBKAgAAUBKAhAQQAKAlAQgIIAFASgIAAFASgIQEEACgJQEICCALUIKrdCkL3GNiK8yaHEwBAdem5AMUbHJlJuESV3lXYdaZvMMIOcqNDzHD3OqLg0yi0z5e6DoCNutBpkMChjaD6PMlRZkL5QmYu/U4SGvFVviMGgjKH5PM5Qs4LWy65skAWFVmORBV09HI2c6eCyoGyJGGcqqyxoFXch6qqC1MUS18uubAjsVpM/1aMX3nxlZbvwpT9feTDQkpAb93wuGTLzzAuLgDQpaDb69HGsoPTRvrCTkCIoMLVZFXR96sz1lQWZVF94kiYF/fXWfcV0QTPnpZEF3X7nT1hWBblRd0OQnwdpgq4eunmQLOj6i4+8HEsTdHvmThbXXrFnxeUPuiPIzydkQSbHuv7SDq0J8goLRZDJpD87q01QbaVY4udBejHvhdbeMD9PV4v5Gl+x/RAUyNNVQYXnbrYm7SdtsRq0er2uPnFyUrEmHQ4t+vGzoESuSRvx0/qK+URti/mCxLbYLFuKzUFKP+HQUiXIS2wpUvpZjuqsKKbENsQyYhtiGbENsYzYhlgGbIgl7A+CUBCAggAUBKAgAAUBKAhAQYBaBOU7YsUxNkSHHhqiQ08M0aEXBhCmBkHFTcMw45yo0MOcqNCTnKjQixw1VHVB1rZzkPG4jKHhsIyhyaSMocUiylBlQfbGhYjxuIyh4bCMocmkjKHFIs5Qk4LM2IzTz6AJ8pv+siCzd4DbxyMLWj2IN6SkCUqfZPVXmA6DqoKczVOLl0znrrNc6nisGJq6HRjDoWhoev+tu+rvZCIZSnuZncgXC9lQNlo1fZB2CzUoaHn/rdtVpQlafuimIFlQqINHFuSMU6QogrLRKnODubFBQem/5DRW0O33v8ULCnTEKYLM/9LSGfdRBGWjVbnVhgU541GKoNmx96+WBS3v/+plb7Igk52442LaK5a0J8h982VB1195o4yaoFUO7a4GreVBx6XyoFoFqcX8zCs7xAQ0fVamFAtkb0opFsqDYCnWhqDAkvFiAjotbNFzhyjIPH3DgurKpJWadHA1f6WeGMh5xXri9Diwdr1UDTIL2Pv/WUo9MX2Smor5RG6LTUOJQmmLhYomqR5tKor+WJdUjw5VFLW2WPokq0RdR0UxJbYhlhHbEMuIbYhlxDbEMmBDLGF/EISCABQEoCAABQEoCEBBAAoCUBCAggAUBKAgAAUBKAhAQQAKAlAQgIIAFASgIAAFASgIQEEACgJQEICCABQEoCAABQEoCEBBAAoCUBCAggAUBKAgAAUBKAhAQQAKAlAQgIIAFASgIAAFASgIQEEACgJQEICCABQEoCDA/9M/SEEwp2qeAAAAAElFTkSuQmCC" /><!-- --></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>distrb &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="kw">rep</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>, <span class="dv">10</span>), <span class="dt">y =</span> <span class="kw">rnorm</span>(<span class="dv">60</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span>
+<span id="cb7-2"><a href="#cb7-2"></a>g_distrb &lt;-<span class="st"> </span><span class="kw">ggplot</span>(distrb, <span class="kw">aes</span>(y, <span class="dt">fill =</span> <span class="kw">factor</span>(x))) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="st">            </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="st">            </span><span class="kw">facet_wrap</span>(. <span class="op">~</span><span class="st"> </span>x, <span class="dt">ncol =</span> <span class="dv">3</span>) <span class="op">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="st">            </span><span class="kw">unhcr_theme</span>()</span>
+<span id="cb7-6"><a href="#cb7-6"></a>g_distrb</span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Fixed-length discrete palettes use the palette’s selected colors until they run out, then it uses grey for all additional levels of the aesthetic.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>g_points <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_discrete_unhcr</span>(<span class="dt">palette =</span> <span class="st">&quot;test&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#&gt; Warning: This manual palette can handle a maximum of 4 values. You have supplied</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co">#&gt; 10.Set parameter extend = TRUE if you wish to interpolate a broader spectrum of</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="co">#&gt; colors.</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a></span>
+<span id="cb8-20"><a href="#cb8-20"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-25"><a href="#cb8-25"></a></span>
+<span id="cb8-26"><a href="#cb8-26"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb8-28"><a href="#cb8-28"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb8-30"><a href="#cb8-30"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb8-31"><a href="#cb8-31"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>g_distrb <span class="op">+</span><span class="st">  </span><span class="kw">scale_fill_discrete_unhcr</span>(<span class="dt">palette =</span> <span class="st">&quot;test&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co">#&gt; Warning: This manual palette can handle a maximum of 4 values. You have supplied</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="co">#&gt; 6.Set parameter extend = TRUE if you wish to interpolate a broader spectrum of</span></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co">#&gt; colors.</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="co">#&gt; Warning: font family not found in Windows font database</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a><span class="co">#&gt; Warning: font family not found in Windows font database</span></span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-10"><a href="#cb9-10"></a><span class="co">#&gt; Warning: font family not found in Windows font database</span></span>
+<span id="cb9-11"><a href="#cb9-11"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb9-13"><a href="#cb9-13"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb9-14"><a href="#cb9-14"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb9-16"><a href="#cb9-16"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb9-17"><a href="#cb9-17"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb9-18"><a href="#cb9-18"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Interpolated palettes extend the discrete palette by interpolating additional values.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>g_points <span class="op">+</span><span class="st"> </span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="st">  </span><span class="kw">scale_color_discrete_unhcr</span>(<span class="dt">palette =</span> <span class="st">&quot;test&quot;</span>, <span class="dt">extend =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-5"><a href="#cb10-5"></a></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-8"><a href="#cb10-8"></a></span>
+<span id="cb10-9"><a href="#cb10-9"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-10"><a href="#cb10-10"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-13"><a href="#cb10-13"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-14"><a href="#cb10-14"></a></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-17"><a href="#cb10-17"></a></span>
+<span id="cb10-18"><a href="#cb10-18"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-19"><a href="#cb10-19"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-20"><a href="#cb10-20"></a></span>
+<span id="cb10-21"><a href="#cb10-21"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-22"><a href="#cb10-22"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-23"><a href="#cb10-23"></a></span>
+<span id="cb10-24"><a href="#cb10-24"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-25"><a href="#cb10-25"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb10-26"><a href="#cb10-26"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb10-27"><a href="#cb10-27"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb10-28"><a href="#cb10-28"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb10-29"><a href="#cb10-29"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2"></a>g_distrb <span class="op">+</span><span class="st"> </span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="st">  </span><span class="kw">scale_fill_discrete_unhcr</span>(<span class="dt">palette =</span> <span class="st">&quot;test&quot;</span>, <span class="dt">extend =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a></span>
+<span id="cb11-10"><a href="#cb11-10"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Opinionated palettes color specific values for “good”, “bad”, and “neutral” in your dataset.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>points<span class="op">$</span>assessment &lt;-<span class="st"> &quot;neutral&quot;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>points<span class="op">$</span>assessment[points<span class="op">$</span>x <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span>] &lt;-<span class="st"> &quot;good&quot;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>points<span class="op">$</span>assessment[points<span class="op">$</span>x <span class="op">&lt;</span><span class="st"> </span><span class="dv">3</span>] &lt;-<span class="st"> &quot;bad&quot;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a></span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="kw">ggplot</span>(points, <span class="kw">aes</span>(x, y, <span class="dt">col =</span> assessment)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="st">  </span><span class="kw">scale_color_opinionated_unhcr</span>(<span class="dt">palette =</span> <span class="st">&quot;test&quot;</span>)</span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="continuous-palettes" class="section level2">
+<h2>Continuous Palettes</h2>
+<p>Consider the following plots:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>g_points_cont &lt;-<span class="st"> </span><span class="kw">ggplot</span>(points, <span class="kw">aes</span>(x, y, <span class="dt">col =</span> x)) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="st">                 </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">5</span>) <span class="op">+</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="st">                 </span><span class="kw">unhcr_theme</span>()</span>
+<span id="cb13-4"><a href="#cb13-4"></a>g_points_cont</span>
+<span id="cb13-5"><a href="#cb13-5"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-7"><a href="#cb13-7"></a></span>
+<span id="cb13-8"><a href="#cb13-8"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-9"><a href="#cb13-9"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-10"><a href="#cb13-10"></a></span>
+<span id="cb13-11"><a href="#cb13-11"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-12"><a href="#cb13-12"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-13"><a href="#cb13-13"></a></span>
+<span id="cb13-14"><a href="#cb13-14"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-15"><a href="#cb13-15"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-16"><a href="#cb13-16"></a></span>
+<span id="cb13-17"><a href="#cb13-17"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-18"><a href="#cb13-18"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-19"><a href="#cb13-19"></a></span>
+<span id="cb13-20"><a href="#cb13-20"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-21"><a href="#cb13-21"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-22"><a href="#cb13-22"></a></span>
+<span id="cb13-23"><a href="#cb13-23"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-24"><a href="#cb13-24"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-25"><a href="#cb13-25"></a></span>
+<span id="cb13-26"><a href="#cb13-26"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-27"><a href="#cb13-27"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb13-28"><a href="#cb13-28"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb13-29"><a href="#cb13-29"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb13-30"><a href="#cb13-30"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb13-31"><a href="#cb13-31"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Diverging palettes grow more extreme at the endpoints. You can specify the <code>midpoint</code> of where the center should be.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>g_points_cont <span class="op">+</span><span class="st"> </span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="st">  </span><span class="kw">scale_color_diverging_unhcr</span>(<span class="dt">palette =</span> <span class="st">&quot;test&quot;</span>, <span class="dt">midpoint =</span> <span class="dv">5</span>)</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-4"><a href="#cb14-4"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-7"><a href="#cb14-7"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-10"><a href="#cb14-10"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-11"><a href="#cb14-11"></a></span>
+<span id="cb14-12"><a href="#cb14-12"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-13"><a href="#cb14-13"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-14"><a href="#cb14-14"></a></span>
+<span id="cb14-15"><a href="#cb14-15"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-16"><a href="#cb14-16"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-17"><a href="#cb14-17"></a></span>
+<span id="cb14-18"><a href="#cb14-18"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-19"><a href="#cb14-19"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-20"><a href="#cb14-20"></a></span>
+<span id="cb14-21"><a href="#cb14-21"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-22"><a href="#cb14-22"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-23"><a href="#cb14-23"></a></span>
+<span id="cb14-24"><a href="#cb14-24"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-25"><a href="#cb14-25"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb14-26"><a href="#cb14-26"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb14-27"><a href="#cb14-27"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb14-28"><a href="#cb14-28"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb14-29"><a href="#cb14-29"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Normal continuous scales gradually move between two ends of a spectrum.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>g_points_cont <span class="op">+</span><span class="st"> </span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="st">  </span><span class="kw">scale_color_continuous_unhcr</span>(<span class="dt">palette =</span> <span class="st">&quot;test&quot;</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a></span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-8"><a href="#cb15-8"></a></span>
+<span id="cb15-9"><a href="#cb15-9"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a></span>
+<span id="cb15-12"><a href="#cb15-12"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a></span>
+<span id="cb15-15"><a href="#cb15-15"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a></span>
+<span id="cb15-18"><a href="#cb15-18"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-19"><a href="#cb15-19"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a></span>
+<span id="cb15-21"><a href="#cb15-21"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-22"><a href="#cb15-22"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-23"><a href="#cb15-23"></a></span>
+<span id="cb15-24"><a href="#cb15-24"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-25"><a href="#cb15-25"></a><span class="co">#&gt; family not found in Windows font database</span></span>
+<span id="cb15-26"><a href="#cb15-26"></a><span class="co">#&gt; Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x, x$y, :</span></span>
+<span id="cb15-27"><a href="#cb15-27"></a><span class="co">#&gt; font family not found in Windows font database</span></span>
+<span id="cb15-28"><a href="#cb15-28"></a><span class="co">#&gt; Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, : font</span></span>
+<span id="cb15-29"><a href="#cb15-29"></a><span class="co">#&gt; family not found in Windows font database</span></span></code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

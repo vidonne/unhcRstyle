@@ -1,16 +1,15 @@
-# Define palettes ----
-
-#' Test palette
+#' @name test_pal
+#' @export test_pal
+#' @title Define discrete palette
+#'
+#' @description  Test palette
 #'
 #' This is a test palette inspired by stop-light colors
 #'
 #' @references https://en.wikipedia.org/wiki/Traffic_light
-#' @name test_pal
-NULL
-
-#' @name test_pal
-#' @export test_pal
-#' @title Define discrete palette
+#' @examples {
+#' seecol(test_pal)  # view color and details
+#' }
 test_pal <- c(
   "#00A850", # green
   "#FEEF01", # yellow
@@ -20,17 +19,28 @@ test_pal <- c(
 
 #' @name test_pal_op
 #' @export test_pal_op
-#' @title Define opinionated discrete palette (good, neutral, bad)
+#' @title Define opinionated discrete palette
+#' @description  (good, neutral, bad)
+#' @examples {
+#' seecol(test_pal_op)  # view color and details
+#' }
 test_pal_op <- c(test_pal[1], "grey50", test_pal[4])
 
 #' @name test_pal_cont
 #' @export test_pal_cont
 #' @title Define two colors for endpoints of continuous palette
+#' @examples {
+#' seecol(test_pal_cont)  # view color and details
+#' }
 test_pal_cont <- c(test_pal[1], test_pal[2])
 
 #' @name test_pal_div
 #' @export test_pal_div
-#' @title Define three colors for endpoints of diverging continuous pallete (high, middle, low)
+#' @title Define three colors for endpoints of diverging continuous palette
+#' @description  (high, middle, low)
+#' @examples {
+#' seecol(test_pal_div)  # view color and details
+#' }
 test_pal_div  <- c(test_pal[1], test_pal[2], test_pal[4])
 
 
