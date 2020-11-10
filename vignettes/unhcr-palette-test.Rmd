@@ -1,43 +1,29 @@
 ---
-title: "Demonstrating Palette"
-author: "Demonstrating Palette"
-date: "`r Sys.Date()`"
+title: "Demonstrating UNHCR Palette"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Demonstrating Palette}
+  %\VignetteIndexEntry{Demonstrating UNHCR Palette}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
+  echo = TRUE,
   collapse = TRUE,
   comment = "#>"
 )
 ```
 
-## Set Up
+## Set Up: load packages
 
 ```{r}
 library(unhcRstyle)
 library(ggplot2)
+library(scales)
 ```
 
 
-```{r}
-# make fake data for plots ----
-points <- data.frame(x = 1:10, y = 1:10)
-distrb <- data.frame(x = rep(1:6, 10), y = rnorm(60, 0, 1))
-
-# make plots for themes ----
-g_points <- ggplot(points, aes(x, y, col = factor(x))) + geom_point(size = 5)
-g_distrb <- ggplot(distrb, aes(y, fill = factor(x))) + geom_density() + facet_wrap(. ~ x, ncol = 3)
-g_points_cont <- ggplot(points, aes(x, y, col = x)) + geom_point(size = 5)
-```
-
-## Motivation for this Theme
-
-ADD SOMETHING HERE!
 
 ## Key Colors
 
@@ -47,7 +33,11 @@ The colors in the discrete palette are:
 scales::show_col(test_pal)
 ```
 
-The colors used to define the conintuous palette spectrum are:
+```{r}
+scales::show_col(unhcr_pal)
+```
+
+The colors used to define the continuous palette spectrum are:
 
 ```{r}
 scales::show_col(test_pal_cont)
@@ -65,7 +55,24 @@ scales::show_col(test_pal_div)
 Consider the following plots:
 
 ```{r}
+# make fake data for plots ----
+points <- data.frame(x = 1:10, y = 1:10)
+
+# make plots for themes ----
+g_points <- ggplot(points, aes(x, y, col = factor(x))) + 
+            geom_point(size = 5) +
+            unhcr_theme()
 g_points
+```
+
+
+
+```{r}
+distrb <- data.frame(x = rep(1:6, 10), y = rnorm(60, 0, 1))
+g_distrb <- ggplot(distrb, aes(y, fill = factor(x))) + 
+            geom_density() + 
+            facet_wrap(. ~ x, ncol = 3) +
+            unhcr_theme()
 g_distrb
 ```
 
@@ -105,6 +112,9 @@ ggplot(points, aes(x, y, col = assessment)) +
 Consider the following plots:
 
 ```{r}
+g_points_cont <- ggplot(points, aes(x, y, col = x)) + 
+                 geom_point(size = 5) +
+                 unhcr_theme()
 g_points_cont
 ```
 

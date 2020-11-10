@@ -3,7 +3,7 @@
 \docType{data}
 \name{test_pal}
 \alias{test_pal}
-\title{Test palette}
+\title{Define discrete palette}
 \format{
 An object of class \code{character} of length 4.
 }
@@ -11,7 +11,14 @@ An object of class \code{character} of length 4.
 test_pal
 }
 \description{
+Test palette
+
 This is a test palette inspired by stop-light colors
+}
+\examples{
+{
+    seecol(test_pal)  # view color and details
+}
 }
 \references{
 https://en.wikipedia.org/wiki/Traffic_light

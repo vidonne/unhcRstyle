@@ -28,7 +28,32 @@ A package with all necessary elements to quickly implement [UNHCR Brand style](h
 
 ## Usage 
 
-install this package from Github:
+First make sure to have all your fonts - and specifically Lato -  registered with R
+
+```r
+# install.packages("extrafont")
+library(extrafont)
+font_import()
+extrafont::loadfonts(device="postscript")
+
+# install.packages('showtext', dependencies = TRUE)
+library(showtext)
+
+# Check the current search path for fonts
+allfontpath <- font_paths()    
+
+# List available font files in the search path
+allfont <- font_files()    
+
+# syntax: font_add(family = "<family_name>", regular = "/path/to/font/file")
+font_add("Lato", "Lato-Regular.ttf")
+
+font_families()
+## automatically use showtext for new devices
+showtext_auto() 
+```
+
+Then, install this package from Github:
 
 ```r
 remotes::install_github('unhcr-web/unhcRstyle')
@@ -39,25 +64,28 @@ Once the package installed, you should be able to create directly your report wi
 ![preview](https://i.imgur.com/81VJFo5.jpg)
 
 
+
+
+
 This package requires a recent version of Pandoc (>= 2.2.3). If you use RStudio, you are recommended to install the [latest version](https://rstudio.com/products/rstudio/download/) (>= 1.2.1335), which has bundled Pandoc 2.x, otherwise you need to install Pandoc separately.
 
 
 > This package is part of `unhcrverse`, a set of packages to ease the production of statistical evidence and data stories. You can install them all with the following:
 
 ```r
-## Use UNHCR Open data
-remotes::install_github('unhcr/unhcrdatapackage')
+## Use UNHCR Open data  - https://unhcr.github.io/unhcrdatapackage/docs/
+remotes::install_github('unhcr/unhcrdatapackage’)
 
-## Use API to connect to licensed / internal data source
-remotes::install_github('unhcr-web/hcrdata')
+## API to connect to internal data source - https://unhcr-web.github.io/hcrdata/docs/
+remotes::install_github('unhcr-web/hcrdata’)
 
-## Perform High Frequency Check during data collection
-remotes::install_github('unhcr-web/HighFrequencyChecks')
+## Perform High Frequency Check https://unhcr.github.io/HighFrequencyChecks/docs/
+remotes::install_github('unhcr-web/HighFrequencyChecks’)
 
-## Process data crunching for survey dataset
-remotes::install_github('unhcr/koboloadeR')
+## Process data crunching for survey dataset - https://unhcr.github.io/koboloadeR/docs/
+remotes::install_github('unhcr/koboloadeR’)
 
-## Use UNHCR template for reporting and writing stories
+## Use UNHCR graphical template- https://unhcr-web.github.io/unhcRstyle/docs/
 remotes::install_github('unhcr-web/unhcRstyle')
 ```
 
