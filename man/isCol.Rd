@@ -11,13 +11,13 @@ Helper function to detect any color (in an individual character string)
 }
 \examples{
 {
-    isCol("white")
-    isCol(col2hex("black", alpha = 255/2))
-    isCol(NA)
-    isCol("bumblebee")
-    # BUT note:
-    isCol(col2rgb("white"))  # => FALSE FALSE FALSE
-}
+isCol("white")
+isCol(col2hex("black", alpha = 255/2))
+isCol(NA)
+isCol("bumblebee")
+# BUT note:
+isCol(col2rgb("white"))  # => FALSE FALSE FALSE
+ }
 }
 \author{
 ipda | unhcr.org | 2020

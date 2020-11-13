@@ -19,10 +19,10 @@ See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2
 }
 \examples{
 {
-    unhcr_grey  # HEX character '#666666' (as value)
-    all.equal(unhcr_grey, unhcr_pal_grey[[4]])  # TRUE (same HEX values)
-    
-    seecol(unhcr_grey)  # view color and details
+unhcr_grey  # HEX character "#666666" (as value)
+all.equal(unhcr_grey, unhcr_pal_grey[[4]])  # TRUE (same HEX values)
+
+seecol(unhcr_grey)  # view color and details
 }
 }
 \seealso{

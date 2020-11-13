@@ -15,7 +15,7 @@ Define two colors for endpoints of continuous palette
 }
 \examples{
 {
-    seecol(test_pal_cont)  # view color and details
+seecol(test_pal_cont)  # view color and details
 }
 }
 \keyword{datasets}

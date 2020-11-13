@@ -20,23 +20,23 @@ See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2
 }
 \examples{
 {
-    unhcr_pal_blue
-    dim(unhcr_pal_blue)  # 1 6
-    
-    # Preferred color:
-    unhcr_pal_blue[5]  # preferred (named) color 'blue5' (as df)
-    unhcr_pal_blue[[5]]  # preferred color value '#0072BC'
-    
-    # Access by position:
-    unhcr_pal_blue[5]  # named color 'blue5' (as df)
-    unhcr_pal_blue[[5]]  # color value '#0072BC'
-    
-    # Access by name:
-    unhcr_pal["blue5"]  # color 'blue5' (as df)
-    unhcr_pal[["blue5"]]  # color value '#0072BC'
-    
-    # Plotting palette:
-    seecol(unhcr_pal_blue)
+unhcr_pal_blue
+dim(unhcr_pal_blue)  # 1 6
+
+# Preferred color:
+unhcr_pal_blue[5]    # preferred (named) color "blue5" (as df)
+unhcr_pal_blue[[5]]  # preferred color value "#0072BC"
+
+# Access by position:
+unhcr_pal_blue[5]    # named color "blue5" (as df)
+unhcr_pal_blue[[5]]  # color value "#0072BC"
+
+# Access by name:
+unhcr_pal["blue5"]    # color "blue5" (as df)
+unhcr_pal[["blue5"]]  # color value "#0072BC"
+
+# Plotting palette:
+seecol(unhcr_pal_blue)
 }
 }
 \seealso{

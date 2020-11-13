@@ -18,19 +18,19 @@ See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2
 }
 \examples{
 {
-    unhcr_pal_primary
-    dim(unhcr_pal_primary)  # 1 4
-    
-    # Access by position:
-    unhcr_pal_primary[1]  # color blue (as df)
-    unhcr_pal_primary[[1]]  # color value '#0072BC'
-    
-    # Access by name:
-    unhcr_pal_primary["Blue"]  # color 'blue5' (as df)
-    unhcr_pal_primary[["Blue"]]  # color value '#0072BC'
-    
-    # Plotting palette:
-    seecol(unhcr_pal_primary)
+unhcr_pal_primary
+dim(unhcr_pal_primary)  # 1 4
+
+# Access by position:
+unhcr_pal_primary[1]    # color blue (as df)
+unhcr_pal_primary[[1]]  # color value "#0072BC"
+
+# Access by name:
+unhcr_pal_primary["Blue"]   # color "blue5" (as df)
+unhcr_pal_primary[["Blue"]] # color value "#0072BC"
+
+# Plotting palette:
+seecol(unhcr_pal_primary)
 }
 }
 \seealso{

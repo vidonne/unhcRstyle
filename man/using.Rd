@@ -14,7 +14,7 @@ Load required packages for the notebook
 }
 \examples{
 \dontrun{
-using("tidyverse", "gganimate", "gghighlight", "ggpubr", "dplyr", "tidyr")
+using('tidyverse','gganimate','gghighlight','ggpubr', 'dplyr', 'tidyr')
 }
 
 }

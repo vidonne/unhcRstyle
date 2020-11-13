@@ -21,10 +21,10 @@ See \url{https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A
 }
 \examples{
 {
-    unhcr_green  # HEX character '#00B398' (as value)
-    all.equal(unhcr_green, unhcr_pal_green[[5]])  # TRUE (same HEX values)
-    
-    seecol(unhcr_green)  # view color and details
+unhcr_green # HEX character "#00B398" (as value)
+all.equal(unhcr_green, unhcr_pal_green[[5]])  # TRUE (same HEX values)
+
+seecol(unhcr_green)  # view color and details
 }
 }
 \seealso{

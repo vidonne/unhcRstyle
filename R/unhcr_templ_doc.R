@@ -1,5 +1,5 @@
-#' @name unhcr_templ_word
-#' @rdname unhcr_templ_word
+#' @name unhcr_templ_doc
+#' @rdname unhcr_templ_doc
 #' @title UNHCR word template
 #'
 #' Loads additional style and template file
@@ -9,9 +9,9 @@
 #' @param toc should a table of contents be displayed?
 #' @param ... additional arguments provided to \code{html_document}
 #' @return An R Markdown output format.
-#' @export unhcr_templ_word
+#' @export unhcr_templ_doc
 #'
-unhcr_templ_word <- function(
+unhcr_templ_doc <- function(
   toc = TRUE,
   ...) {
 

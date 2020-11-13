@@ -44,17 +44,17 @@ A vector of colors (in character format).
 }
 \examples{
 {
-    usecol(pal = unhcr_pal, n = "all")  # default color palette
-    usecol(pal = unhcr_pal, n = 4)  # selecting n dedicated colors
-    usecol(pal = unhcr_pal, n = 20)  # extending color palette
-    
-    # Mixing a new color palette:
-    pal_1 <- usecol(pal = c(rev(pal_blue), "white", pal_red))
-    seecol(pal_1)
-    
-    # Mixing and extending a color palette:
-    pal_2 <- usecol(pal = c(rev(pal_green), "white", pal_red), n = 20)
-    seecol(pal_2)
+usecol(pal = unhcr_pal, n = "all")  # default color palette
+usecol(pal = unhcr_pal, n =  4)     # selecting n dedicated colors
+usecol(pal = unhcr_pal, n = 20)     # extending color palette
+
+# Mixing a new color palette:
+pal_1 <- usecol(pal = c(rev(pal_blue), "white", pal_red))
+seecol(pal_1)
+
+# Mixing and extending a color palette:
+pal_2 <- usecol(pal = c(rev(pal_green), "white", pal_red), n = 20)
+seecol(pal_2)
 }
 }
 \seealso{

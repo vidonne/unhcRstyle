@@ -21,9 +21,9 @@ See \url{https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A
 }
 \examples{
 {
-    unhcr_darkblue  # HEX character '#18375F' (as value)
-    all.equal(unhcr_darkblue, unhcr_pal_darkblue[[6]])  # TRUE (same HEX values)
-    seecol(unhcr_darkblue)  # view color and details
+unhcr_darkblue # HEX character "#18375F" (as value)
+all.equal(unhcr_darkblue, unhcr_pal_darkblue[[6]])  # TRUE (same HEX values)
+seecol(unhcr_darkblue)  # view color and details
 }
 }
 \seealso{

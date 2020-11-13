@@ -11,9 +11,9 @@ Helper function to detect HEX-colors
 }
 \examples{
 {
-    isHexCol("black")
-    isHexCol(col2hex("black"))
-    isHexCol(rgb2hex(0, 0, 0))
+isHexCol("black")
+isHexCol(col2hex("black"))
+isHexCol(rgb2hex(0, 0, 0))
 }
 }
 \author{

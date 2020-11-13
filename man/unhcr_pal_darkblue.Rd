@@ -23,13 +23,13 @@ See \url{https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A
 }
 \examples{
 {
-    unhcr_pal_darkblue
-    dim(unhcr_pal_darkblue)  # 1 6
-    unhcr_pal_darkblue[6]  # preferred (named) color 'darkblue6'
-    unhcr_pal_darkblue[[6]]  # preferred color 'darkblue6' OR '#18375F'
-    
-    # Plotting palette:
-    seecol(unhcr_pal_darkblue)
+unhcr_pal_darkblue
+dim(unhcr_pal_darkblue)  # 1 6
+unhcr_pal_darkblue[6]    # preferred (named) color "darkblue6"
+unhcr_pal_darkblue[[6]]  # preferred color "darkblue6" OR "#18375F"
+
+# Plotting palette:
+seecol(unhcr_pal_darkblue)
 }
 }
 \seealso{

@@ -15,7 +15,7 @@ test_pal_op
 }
 \examples{
 {
-    seecol(test_pal_op)  # view color and details
+seecol(test_pal_op)  # view color and details
 }
 }
 \keyword{datasets}
