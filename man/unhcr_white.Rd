@@ -18,7 +18,7 @@ See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2
 }
 \examples{
 {
-unhcr_white  # "#FFFFFF"
+    unhcr_white  # '#FFFFFF'
 }
 }
 \seealso{

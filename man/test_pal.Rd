@@ -17,7 +17,7 @@ This is a test palette inspired by stop-light colors
 }
 \examples{
 {
-seecol(test_pal)  # view color and details
+    seecol(test_pal)  # view color and details
 }
 }
 \references{

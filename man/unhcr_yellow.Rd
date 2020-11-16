@@ -21,9 +21,9 @@ See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2
 }
 \examples{
 {
-unhcr_yellow  # HEX character "#FAEB00" (as value)
-all.equal(unhcr_yellow, unhcr_pal_yellow[[5]])  # TRUE (same HEX values)
-seecol(unhcr_yellow)  # view color and details
+    unhcr_yellow  # HEX character '#FAEB00' (as value)
+    all.equal(unhcr_yellow, unhcr_pal_yellow[[5]])  # TRUE (same HEX values)
+    seecol(unhcr_yellow)  # view color and details
 }
 
 }

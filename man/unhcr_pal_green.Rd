@@ -21,13 +21,13 @@ See \url{https://media.unhcr.org/archive/Data-visualisation-colour-palette-2CZ7A
 }
 \examples{
 {
-unhcr_pal_green
-dim(unhcr_pal_green)  # 1 6
-unhcr_pal_green[5]    # preferred (named) color "green5"
-unhcr_pal_green[[5]]  # preferred color "green5" OR "#00B398"
-
-# Plotting palette:
-seecol(unhcr_pal_green)
+    unhcr_pal_green
+    dim(unhcr_pal_green)  # 1 6
+    unhcr_pal_green[5]  # preferred (named) color 'green5'
+    unhcr_pal_green[[5]]  # preferred color 'green5' OR '#00B398'
+    
+    # Plotting palette:
+    seecol(unhcr_pal_green)
 }
 }
 \seealso{

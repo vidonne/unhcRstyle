@@ -20,13 +20,13 @@ See \url{https://media.unhcr.org/archive/Brand-Book-for-external-partners-2CZ7A2
 }
 \examples{
 {
-unhcr_pal_grey
-dim(unhcr_pal_grey)  # 1 6
-unhcr_pal_grey[4]    # preferred (named) color "grey4"
-unhcr_pal_grey[[4]]  # preferred color "grey4" OR "#666666"
-
-# Plotting palette:
-seecol(unhcr_pal_grey)
+    unhcr_pal_grey
+    dim(unhcr_pal_grey)  # 1 6
+    unhcr_pal_grey[4]  # preferred (named) color 'grey4'
+    unhcr_pal_grey[[4]]  # preferred color 'grey4' OR '#666666'
+    
+    # Plotting palette:
+    seecol(unhcr_pal_grey)
 }
 }
 \seealso{

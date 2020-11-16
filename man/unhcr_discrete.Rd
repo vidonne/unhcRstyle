@@ -11,9 +11,8 @@ Ggplot scale color discrete and continuous palette based on the unhcr_pal_graphi
 }
 \examples{
 {
-library(scales)
-## to fix: the below...
-#scales::show_col(unhcr_discrete(9))
+    library(scales)
+    ## to fix: the below... scales::show_col(unhcr_discrete(9))
 }
 }
 \author{

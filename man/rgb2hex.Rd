@@ -11,8 +11,8 @@ Utility functions to access and plot color palettes
 }
 \examples{
 {
-rgb2hex(255, 255, 255)
-rgb2hex(0, 0, 0)
+    rgb2hex(255, 255, 255)
+    rgb2hex(0, 0, 0)
 }
 }
 \author{
