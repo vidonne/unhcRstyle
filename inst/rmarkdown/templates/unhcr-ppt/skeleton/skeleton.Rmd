@@ -4,7 +4,7 @@ author: "Your name"
 date: " `r format(Sys.Date(),  '%d %B %Y')`"
 always_allow_html: yes
 output:
-  unhcRstyle::unhcr_templ__ppt:
+  unhcRstyle::unhcr_templ_ppt:
     toc: true
 ---
 
