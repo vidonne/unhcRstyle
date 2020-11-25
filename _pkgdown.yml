@@ -24,7 +24,7 @@ reference:
       - unhcr_templ_paged
       - unhcr_templ_slide
       - unhcr_templ_html
-      - unhcr_templ_word
+      - unhcr_templ_doc
       - unhcr_templ_ppt
   - title: Gggplot2 themes
     contents:
