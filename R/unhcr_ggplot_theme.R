@@ -109,8 +109,8 @@ unhcr_theme <- function(base_family="Lato",
                         legend_title_size = base_size*0.85,
                         legend_title_face = "plain",
                         legend_title = FALSE,
-                        plot_margin = margin(30, 30, 30, 30),
-                        grid_col = grey(.80, 1),
+                        plot_margin = margin(15, 15, 15, 15),
+                        grid_col = grey(.60, 1),
                         grid = TRUE,
                         axis_col = grey(.40, 1),
                         axis = FALSE,
@@ -141,9 +141,9 @@ unhcr_theme <- function(base_family="Lato",
 
   ## grid ----
   if (inherits(grid, "character") | grid == TRUE) {
-    ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.2))
-    ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.2))
-    ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.15))
+    ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.5))
+    ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.5))
+    ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.25))
 
     if (inherits(grid, "character")) {
       if (regexpr("X", grid)[1] < 0) ret <- ret + theme(panel.grid.major.x=element_blank())
@@ -202,7 +202,7 @@ unhcr_theme <- function(base_family="Lato",
 
   ret <- ret + theme(axis.title=element_text(size=axis_title_size,
                                              family=axis_title_family,
-                                             color = grey(.40, 1)))
+                                             color = grey(.30, 1)))
 
   ret <- ret + theme(axis.title.x=element_text(hjust=xj,
                                                size=axis_title_size,
