@@ -110,7 +110,7 @@ unhcr_theme <- function(base_family="Lato",
                         legend_title_face = "plain",
                         legend_title = FALSE,
                         plot_margin = margin(15, 15, 15, 15),
-                        grid_col = grey(.60, 1),
+                        grid_col = grey(.80, 1),
                         grid = TRUE,
                         axis_col = grey(.40, 1),
                         axis = FALSE,
@@ -121,7 +121,7 @@ unhcr_theme <- function(base_family="Lato",
   ## legend ----
   ret <- ret + theme(legend.background=element_blank())
   ret <- ret + theme(legend.key=element_blank())
-  ret <- ret + theme(legend.position = "bottom")
+  ret <- ret + theme(legend.position = "top")
   ret <- ret + theme(legend.justification = 'right')
   ret <- ret + theme(legend.direction = "horizontal")
 

@@ -32,7 +32,7 @@ unhcr_theme(
   legend_title_face = "plain",
   legend_title = FALSE,
   plot_margin = margin(15, 15, 15, 15),
-  grid_col = grey(0.6, 1),
+  grid_col = grey(0.8, 1),
   grid = TRUE,
   axis_col = grey(0.4, 1),
   axis = FALSE,
