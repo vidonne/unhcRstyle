@@ -24,7 +24,7 @@ unhcr_theme(
   caption_margin = base_size * 0.75,
   axis_text_size = base_size,
   axis_title_family = subtitle_family,
-  axis_title_size = base_size * 0.75,
+  axis_title_size = base_size * 0.85,
   axis_title_face = "plain",
   axis_title_just = "rt",
   legend_title_family = base_family,
